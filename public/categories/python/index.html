@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>
+      
+  PYTHON &ndash; CODE SNIPET
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="CODE SNIPET">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://code.okanemochi.tk/">
+    CODE SNIPET
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item " href="/post/">
+      
+      <span>記事</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/tags/">
+      
+      <span>タグ</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/categories/">
+      
+      <span>カテゴリー</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>PYTHON</h1>
+  
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/03/11/%E3%83%AA%E3%82%B9%E3%83%88%E5%86%85%E5%8C%85%E8%A1%A8%E8%A8%98%EF%BC%91/">
+        <div class="h2 mt-1 mb-1">リスト(セット)内包表記/包括表記</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/python' class="muted-link">
+  <span class="Label Label--gray-darker">PYTHON</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-03-11</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    data = [1,2,3,4,5] newdata = [] for d in data: newdata.append(d * 2) print(newdata) # リスト内包表記で newdata = [d * 2 for d in data] print(newdata) newdata = [] for d in data: if d % 2 == 0: newdata.append(d * 2) print(newdata) # if文付きのリスト処理 newdata = [d * 2 for d in
+    <a class="muted-link" href="/2018/03/11/%E3%83%AA%E3%82%B9%E3%83%88%E5%86%85%E5%8C%85%E8%A1%A8%E8%A8%98%EF%BC%91/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/03/08/termcolor-%E5%87%BA%E5%8A%9B%E6%96%87%E5%AD%97%E3%81%AB%E8%89%B2%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B/">
+        <div class="h2 mt-1 mb-1">termcolor 出力文字に色を指定する</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/python' class="muted-link">
+  <span class="Label Label--gray-darker">PYTHON</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-03-08</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    from termcolor import colored print('test') print(colored('test','red')) &nbsp;
+    <a class="muted-link" href="/2018/03/08/termcolor-%E5%87%BA%E5%8A%9B%E6%96%87%E5%AD%97%E3%81%AB%E8%89%B2%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%99%E3%82%8B/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/03/08/%E3%81%82%E3%82%8B%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E4%B8%AD%E3%81%AB%E5%A4%89%E6%95%B0s%E3%81%8C%E5%B9%BE%E3%81%A4%E3%81%82%E3%81%A3%E3%81%9F%E3%81%8B%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%99/">
+        <div class="h2 mt-1 mb-1">ある文字列の中に変数sが幾つあったかカウントする</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/python' class="muted-link">
+  <span class="Label Label--gray-darker">PYTHON</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-03-08</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    # 何でも良いので文字列を代入 s = "dsgdkkrtoureuresdsftgst" #空のディクショナリー宣言 d = {} #文字列を一文字ずつループ for c in s: #もし、ディクショナリーが空だったら if c
+    <a class="muted-link" href="/2018/03/08/%E3%81%82%E3%82%8B%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E4%B8%AD%E3%81%AB%E5%A4%89%E6%95%B0s%E3%81%8C%E5%B9%BE%E3%81%A4%E3%81%82%E3%81%A3%E3%81%9F%E3%81%8B%E3%82%AB%E3%82%A6%E3%83%B3%E3%83%88%E3%81%99/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+<div class="Box Box--blue p-2 mb-3">
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=primemusic&f=ifr&linkID=7465bcf76f1f36796076c2680261a314&t=pasokon-news-22&tracking_id=pasokon-news-22" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe></div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/bash" class="link-gray text-emphasized css-truncate-target"><span class="">Bash</span></a>
+      <span class="text-right Counter">3</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/docker" class="link-gray text-emphasized css-truncate-target"><span class="">Docker</span></a>
+      <span class="text-right Counter">1</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/dos" class="link-gray text-emphasized css-truncate-target"><span class="">Dos</span></a>
+      <span class="text-right Counter">1</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/excel-vba" class="link-gray text-emphasized css-truncate-target"><span class="">Excel vba</span></a>
+      <span class="text-right Counter">22</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/gas" class="link-gray text-emphasized css-truncate-target"><span class="">Gas</span></a>
+      <span class="text-right Counter">28</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/html" class="link-gray text-emphasized css-truncate-target"><span class="">Html</span></a>
+      <span class="text-right Counter">1</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/php" class="link-gray text-emphasized css-truncate-target"><span class="">Php</span></a>
+      <span class="text-right Counter">3</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/python" class="link-gray text-emphasized css-truncate-target"><span class="">Python</span></a>
+      <span class="text-right Counter">3</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/sqlite" class="link-gray text-emphasized css-truncate-target"><span class="">Sqlite</span></a>
+      <span class="text-right Counter">19</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/%e6%9c%aa%e5%88%86%e9%a1%9e" class="link-gray text-emphasized css-truncate-target"><span class="">未分類</span></a>
+      <span class="text-right Counter">1</span>
+    </span>
+    
+  </div>
+<div class="Box Box--blue p-2 mb-3">
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=foodbeverage&f=ifr&linkID=0aaf3f36831dbef10e1c8fcc15788007&t=pasokon-news-22&tracking_id=pasokon-news-22" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+</div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    sphia &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+
+	<script type="text/javascript">
+	    amzn_assoc_ad_type = "link_enhancement_widget";
+	    amzn_assoc_tracking_id = "pasokon-news-22";
+	    amzn_assoc_linkid = "5d961039d13a5190e1ea2fb9081d0bd3";
+	    amzn_assoc_placement = "";
+	    amzn_assoc_marketplace = "amazon";
+	    amzn_assoc_region = "JP";
+	</script>
+	<script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
+
+  </body>
+</html>

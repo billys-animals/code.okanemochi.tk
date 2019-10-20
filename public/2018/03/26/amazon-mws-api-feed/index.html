@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>
+      
+  Amazon MWS API FEED &ndash; CODE SNIPET
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="//Feed用 var namespace3 = &#34;http://mws.amazonaws.com/doc/2009-01-01/&#34;; var namespace4=&#39;&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xsi:noNamespaceSchemaLocation=&#34;amzn-envelope.xsd&#34;&#39;; /************************************************************************* SubmitFeed FeedType=_POST_INVENTORY_AVAILABILITY_DATA_ ＜＜トランザクショ＞＞ SubmitFeed 「リクエスト送信してFeedSubmissionIdを取得」 =&amp;gt;GetFee|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="CODE SNIPET">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://code.okanemochi.tk/">
+    CODE SNIPET
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item " href="/post/">
+      
+      <span>記事</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/tags/">
+      
+      <span>タグ</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/categories/">
+      
+      <span>カテゴリー</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Amazon MWS API FEED</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+<a href='/categories/php' class="muted-link">
+  <span class="Label Label--gray-darker">PHP</span>
+</a>
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2018-03-26. Published at: 2018-03-26.">
+        
+          Published: 2018-03-26
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+
+<article>
+
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <pre class="lang:js decode:true ">//Feed用
+var namespace3 = "http://mws.amazonaws.com/doc/2009-01-01/";
+var namespace4='"http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"';
+
+/*************************************************************************
+ SubmitFeed
+ FeedType=_POST_INVENTORY_AVAILABILITY_DATA_
+ 
+ ＜＜トランザクショ＞＞
+ SubmitFeed　「リクエスト送信してFeedSubmissionIdを取得」
+  =&gt;GetFeedSubmissionList(FeedSubmissionId)「FeedSubmissionIdにてオペレーション送信」
+     =&gt;GetFeedSubmissionResult(FeedSubmissionId)「オペレーション完了する」
+*************************************************************************/
+function putFeedSubmit() {
+    var u = "https://" + mws_address + "/?";
+
+    var sku1        = "test-6";
+    var quantity1   = "1";
+    var leadTimeToShip1 = "7";
+   
+    //XMLファイルのひな形にパラメータを埋め込む
+    var payload = '&lt;?xml version="1.0" encoding="utf-8"?&gt;';
+        payload += '&lt;AmazonEnvelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"&gt;';
+        payload += "&lt;Header&gt;";
+        payload += "&lt;DocumentVersion&gt;1.01&lt;/DocumentVersion&gt;";
+        payload += "&lt;MerchantIdentifier&gt;"+SellerId+"&lt;/MerchantIdentifier&gt;";
+        payload += "&lt;/Header&gt;";
+        payload += "&lt;MessageType&gt;Inventory&lt;/MessageType&gt;";
+        payload += "&lt;Message&gt;";
+        payload += "&lt;MessageID&gt;1&lt;/MessageID&gt;";
+        payload += "&lt;OperationType&gt;Update&lt;/OperationType&gt;";
+        payload += "&lt;Inventory&gt;";
+        payload += "&lt;SKU&gt;"+sku1+"&lt;/SKU&gt;";
+        payload += "&lt;Quantity&gt;"+quantity1+"&lt;/Quantity&gt;";
+        payload += "&lt;FulfillmentLatency&gt;"+leadTimeToShip1+"&lt;/FulfillmentLatency&gt;";
+        payload += "&lt;/Inventory&gt;";
+        payload += "&lt;/Message&gt;";
+        payload += " &lt;/AmazonEnvelope&gt;";
+
+    /*******************************************************************************
+    　ContentMD5Value用のMD5ハッシュ（バイナリー値）取得の為にPHPプログラムを呼出しする（ここから）
+　　　 Google Apps ScriptよりPHPを呼出しPOSTするサンプル
+    *******************************************************************************/
+    //＜＜＊＊　自運営サイト参照用　＊＊＞＞
+    //var url = 'https://okanemochi.tk/md5/index5.php';
+        //＜＜＊＊　heroku登録APP参照用　＊＊＞＞
+    var url = 'https://getmd5hushed.herokuapp.com/';   
+    
+    var option = {
+      "method":"POST",
+      "Content-Type": "application/json",
+      "payload": payload,
+      "muteHttpExceptions" : true,
+    }   
+    var response = UrlFetchApp.fetch(url,option);  
+    var data = JSON.parse(response.getContentText());
+  　f_hush=data["message"];
+   
+    /*******************************************************************************
+    　ContentMD5Value用のMD5ハッシュ（バイナリー値）取得の為にPHPプログラムを呼出しする（ここまで）
+    *******************************************************************************/
+     
+    //　＊＊＊　以下、署名に必要なパラメーター　（ここから）＊＊＊
+    var o1 = {
+        "Version": MWS_VERSION,
+        "Action": "SubmitFeed",
+        "AWSAccessKeyId": AWS_KEYS,
+        "Merchant": SellerId,
+        "SignatureVersion": "2",
+        "Timestamp": new Date().toISOString(),
+        "SignatureMethod": "HmacSHA256",
+        "MarketplaceIdList.Id.1": "A1VC38T7YXB528",
+        "FeedType":"_POST_INVENTORY_AVAILABILITY_DATA_",
+        //"FeedType":"_POST_PRODUCT_DATA_",
+        "PurgeAndReplace":"false",
+        "ContentMD5Value": f_hush
+    }
+    var a = Object.keys(o1).sort();
+    a = a.map(function (key) {
+        return key + "=" + encodeURIComponent(o1[key]);
+    });   
+    var sign  = "POST" + "\n";
+    sign += mws_address + "\n";
+    sign += "/\n";
+    sign += a.join("&");
+    var x = Utilities.base64Encode(Utilities.computeHmacSha256Signature(sign, AWS_SCEC));
+    
+    //　＊＊＊　署名作成(変数x)　（ここまで）＊＊＊
+ 
+    //API接続用のURL生成
+    var uri = "https://"+ mws_address +"/?";
+    uri += a.join("&")+ "&Signature=" + encodeURIComponent(x);
+    
+    //API接続時のPOST情報生成
+    var urlFetchOption = {
+        "method" : "POST",
+        "Content-Type": "application / xml; charset = utf-8 ",
+        "payload": payload,
+        "muteHttpExceptions" : true
+    };
+    
+    var r = UrlFetchApp.fetch(uri, urlFetchOption);
+    var document = XmlService.parse(r.getContentText());
+    
+    var root = document.getRootElement();
+    var NS3 = XmlService.getNamespace(namespace3);
+    var respone_node = root.getQualifiedName();
+    
+    //エラー確認
+    if (respone_node == "ErrorResponse") {
+        //var res = _sleep(10);
+        return 9999;
+    }
+
+　　//データ取得
+    var AttributeSets = root.getChild("SubmitFeedResult", NS3).getChild("FeedSubmissionInfo", NS3);
+    var FeedSubmissionId = AttributeSets.getChild("FeedSubmissionId", NS3).getValue();
+    var FeedType = AttributeSets.getChild("FeedType", NS3).getValue();
+    var SubmittedDate = AttributeSets.getChild("SubmittedDate", NS3).getValue();
+    var FeedProcessingStatus = AttributeSets.getChild("FeedProcessingStatus", NS3).getValue();
+
+    return 0;
+}
+</pre>
+
+<p><a href="https://okanemochi.tk/code_snipet/php/399/">https://okanemochi.tk/code_snipet/php/399/</a></p>
+
+  </section>
+  
+  <div class="xPrevNextLink">
+  
+    <div class="xPrevNextLink_prev">
+      <a href="https://code.okanemochi.tk/2018/03/21/amazonmws-api-sample/">AmazonMWS API  Sample</a>
+    </div>
+  
+  
+    <div class="xPrevNextLink_next">
+      <a href="https://code.okanemochi.tk/2018/03/26/%E5%A4%96%E9%83%A8%E3%81%8B%E3%82%89post%E3%81%95%E3%82%8C%E3%81%9F%E6%96%87%E5%AD%97%E5%88%97%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8Bmd5%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E5%80%A4%E3%82%92%E5%91%BC/">外部からPOSTされた文字列に対するMD5ハッシュ値を呼出し元に返す関数</a>
+    </div>
+  
+</div>
+  
+</article>
+
+
+
+
+<h3>関連記事</h3>
+<ul>
+  
+  <li><a href="/2018/03/26/urlfetchapp-fetch%E6%99%82%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E5%80%A4%E4%B8%80%E8%A6%A7/">UrlFetchApp.fetch時のオプション値一覧</a></li>
+  
+  <li><a href="/2018/03/26/%E5%A4%96%E9%83%A8%E3%81%8B%E3%82%89post%E3%81%95%E3%82%8C%E3%81%9F%E6%96%87%E5%AD%97%E5%88%97%E3%81%AB%E5%AF%BE%E3%81%99%E3%82%8Bmd5%E3%83%8F%E3%83%83%E3%82%B7%E3%83%A5%E5%80%A4%E3%82%92%E5%91%BC/">外部からPOSTされた文字列に対するMD5ハッシュ値を呼出し元に返す関数</a></li>
+  
+  <li><a href="/2018/03/21/amazonmws-api-sample/">AmazonMWS API  Sample</a></li>
+  
+  <li><a href="/2018/03/14/%E6%8C%87%E5%AE%9A%E6%97%A5%E6%99%82%E3%81%AB%E3%83%88%E3%83%AA%E3%82%AC%E3%83%BC%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B/">指定日時にトリガーを設定する</a></li>
+  
+  <li><a href="/2018/03/13/chatwork-api%E3%81%AB%E3%82%88%E3%82%8B%E6%8C%87%E5%AE%9A%E5%A0%B4%E6%89%80%E3%81%B8%E3%81%AE%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF/">Chatwork APIによる指定場所への書き込み</a></li>
+  
+</ul>
+
+
+
+
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Amazon MWS API FEED</b>
+      
+    </div>
+  
+
+  
+    <div>
+
+      
+<div class="Box Box--blue p-2 mb-3">
+<h3>最新記事</h3>
+<ul>
+  
+    <li>
+      <b><a href="/2019/06/13/html%E8%A6%81%E7%B4%A0%E3%81%AE%E5%AD%A6%E7%BF%92/">詳解HTML 基礎文法編</a></b>
+      <time>2019-06-13</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/%E5%92%8C%E6%9A%A6%E8%A5%BF%E6%9A%A6%E6%B7%B7%E5%90%88%E8%AA%95%E7%94%9F%E6%97%A5%E3%82%92%E8%A5%BF%E6%9A%A6%E3%81%AB%E7%B5%B1%E4%B8%80%E3%81%99%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB/">和暦西暦混合誕生日を西暦に統一するモジュール</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/office2010-64bit%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEado%E6%8E%A5%E7%B6%9A-ado%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E7%AF%84/">Office2010-64bit環境でのADO接続　ADOを使ってエクセルシート範囲内の重複数を得る</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E4%BB%98%E3%81%A8%E6%9B%9C%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97%E5%B9%B3%E6%88%90%E5%B9%B4%E6%9C%88%E6%97%A5/">現在の日付と曜日を取得（平成〇〇年〇月〇日〇曜日）</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80%E9%9A%9B%E3%81%AB%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%88%A4%E5%AE%9A%E3%81%97/">外部ファイルを読み込む際に文字コードを判定してから読み出す</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+</ul>
+</div>
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    sphia &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+
+	<script type="text/javascript">
+	    amzn_assoc_ad_type = "link_enhancement_widget";
+	    amzn_assoc_tracking_id = "pasokon-news-22";
+	    amzn_assoc_linkid = "5d961039d13a5190e1ea2fb9081d0bd3";
+	    amzn_assoc_placement = "";
+	    amzn_assoc_marketplace = "amazon";
+	    amzn_assoc_region = "JP";
+	</script>
+	<script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
+
+  </body>
+</html>

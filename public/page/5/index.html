@@ -1,0 +1,383 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+	<meta name="generator" content="Hugo 0.57.2" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>
+      
+  CODE SNIPET &ndash; CODE SNIPET
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="CODE SNIPET">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://code.okanemochi.tk/">
+    CODE SNIPET
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item " href="/post/">
+      
+      <span>記事</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/tags/">
+      
+      <span>タグ</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/categories/">
+      
+      <span>カテゴリー</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>CODE SNIPET</h1>
+  
+
+  
+  <div>
+    <div>
+      <a href="/2019/06/12/ssh%e6%8e%a5%e7%b6%9a%e3%81%a7%e3%82%b5%e3%83%bc%e3%83%90%e3%83%bc%e3%81%ae%e3%83%90%e3%83%83%e3%82%af%e3%82%a2%e3%83%83%e3%83%97%e3%82%92%e5%8f%96%e5%be%97%e3%81%99%e3%82%8b%e3%82%b7%e3%82%a7/">
+        <h3 class="buy-box">ssh接続でサーバーのバックアップを取得するシェルスクリプト</h3>
+      </a>
+      
+      
+      
+
+
+<a href='/categories/bash' class="muted-link">
+  <span class="Label Label--gray-darker">BASH</span>
+</a>
+
+
+
+
+      2019-06-12
+    </div>
+    #!/bin/sh #PHP # バックアップを取るファイルがあるディレクトリまで移動します。 cd /home/alvis/www/wp # 必要なファイルのバックアップを取ります。 tar cvf /home/alvis/backup/wp/backup-`date +%Y%m%d`.tar ./ # バックアップした
+    <br />
+    
+
+
+<img src="">
+
+
+  </div>
+  
+  <div>
+    <div>
+      <a href="/2019/06/12/%e3%82%bb%e3%83%ab%e3%81%ae%e7%af%84%e5%9b%b2%e3%82%92%e3%83%b4%e3%82%a1%e3%83%aa%e3%82%a2%e3%83%b3%e3%83%88%e5%9e%8b%e9%85%8d%e5%88%97%e3%81%ab%e6%a0%bc%e7%b4%8d%e5%be%8c%e3%80%81%e5%86%8d%e5%ba%a6/">
+        <h3 class="buy-box">セルの範囲をヴァリアント型配列に格納後、再度セルに戻す（高速化）</h3>
+      </a>
+      
+      
+      
+
+
+<a href='/categories/excel-vba' class="muted-link">
+  <span class="Label Label--gray-darker">Excel VBA</span>
+</a>
+
+
+
+
+      2019-06-12
+    </div>
+    Sub Test6() Dim i As Long, B As Variant ReDim B(9999, 0) For i = 2 To 10001 B(i - 2, 0) = WorksheetFunction.VLookup(Cells(i, 1), Range("D2:E6"), 2, False) Next i Range("B2:B10001") = B End Sub エクセルのセルを使った操作は少ない件数の内は気にならないが、数百、数千
+    <br />
+    
+
+
+<img src="">
+
+
+  </div>
+  
+  <div>
+    <div>
+      <a href="/2018/03/28/office%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%81%ae%e3%83%97%e3%83%ad%e3%83%91%e3%83%87%e3%82%a3%e3%83%bc%e5%80%a4%e3%81%ae%e5%8f%96%e5%be%97/">
+        <h3 class="buy-box">Officeファイルのプロパディー値の取得</h3>
+      </a>
+      
+      
+      
+
+
+<a href='/categories/excel-vba' class="muted-link">
+  <span class="Label Label--gray-darker">Excel VBA</span>
+</a>
+
+
+
+
+      2018-03-28
+    </div>
+    Sub read_test() res = get_ppt_info("ファイル名", "フォルダのパス") MsgBox res End Sub Function get_ppt_info(sFile As String, sPath As String) As String Dim ppDoc As Object 'オブジェクトを取得 Set ppDoc = GetObject(sPath & "/" & sFile)
+    <br />
+    
+
+
+<img src="">
+
+
+  </div>
+  
+  <div>
+    <div>
+      <a href="/2018/03/26/urlfetchapp-fetch%e6%99%82%e3%81%ae%e3%82%aa%e3%83%97%e3%82%b7%e3%83%a7%e3%83%b3%e5%80%a4%e4%b8%80%e8%a6%a7/">
+        <h3 class="buy-box">UrlFetchApp.fetch時のオプション値一覧</h3>
+      </a>
+      
+      
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      2018-03-26
+    </div>
+    パラメーター 名 タイプ 説明 url String フェッチするURL params Object 以下に定義されている高度なパラメータを指定するオプションのJavaScriptオブジェクト
+    <br />
+    
+
+
+<img src="">
+
+
+  </div>
+  
+  <div>
+    <div>
+      <a href="/2018/03/26/%e5%a4%96%e9%83%a8%e3%81%8b%e3%82%89post%e3%81%95%e3%82%8c%e3%81%9f%e6%96%87%e5%ad%97%e5%88%97%e3%81%ab%e5%af%be%e3%81%99%e3%82%8bmd5%e3%83%8f%e3%83%83%e3%82%b7%e3%83%a5%e5%80%a4%e3%82%92%e5%91%bc/">
+        <h3 class="buy-box">外部からPOSTされた文字列に対するMD5ハッシュ値を呼出し元に返す関数</h3>
+      </a>
+      
+      
+      
+
+
+<a href='/categories/php' class="muted-link">
+  <span class="Label Label--gray-darker">PHP</span>
+</a>
+
+
+
+
+      2018-03-26
+    </div>
+    &lt;?php /* 外部からPOST呼出しされた場合の$_POST変数の取得方法 */ $request_body = file_get_contents('php://input'); /* 「$request_body」に対してデコードが必要な場合もある */
+    <br />
+    
+
+
+<img src="">
+
+
+  </div>
+  
+  <div>
+    <div>
+      <a href="/2018/03/26/amazon-mws-api-feed/">
+        <h3 class="buy-box">Amazon MWS API FEED</h3>
+      </a>
+      
+      
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+<a href='/categories/php' class="muted-link">
+  <span class="Label Label--gray-darker">PHP</span>
+</a>
+
+
+
+
+      2018-03-26
+    </div>
+    //Feed用 var namespace3 = "http://mws.amazonaws.com/doc/2009-01-01/"; var namespace4='"http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"'; /************************************************************************* SubmitFeed FeedType=_POST_INVENTORY_AVAILABILITY_DATA_ ＜＜トランザクショ＞＞ SubmitFeed 「リクエスト送信してFeedSubmissionIdを取得」 =&gt;GetFee
+    <br />
+    
+
+
+<img src="">
+
+
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/4/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+
+        
+        <a href="/page/6/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    sphia &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+
+	<script type="text/javascript">
+	    amzn_assoc_ad_type = "link_enhancement_widget";
+	    amzn_assoc_tracking_id = "pasokon-news-22";
+	    amzn_assoc_linkid = "5d961039d13a5190e1ea2fb9081d0bd3";
+	    amzn_assoc_placement = "";
+	    amzn_assoc_marketplace = "amazon";
+	    amzn_assoc_region = "JP";
+	</script>
+	<script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
+
+  </body>
+</html>

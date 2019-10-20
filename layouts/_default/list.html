@@ -1,0 +1,34 @@
+{{ define "title" }}
+  {{ .Title }} &ndash; {{ .Site.Title }}
+{{ end }}
+
+
+{{ define "main" }}
+<!-- list template -->
+<div>
+
+  <h1>{{ .Title }}</h1>
+  {{ .Content }}
+
+  {{ range .Paginator.Pages }}
+    <!-- single page card -->
+    {{ partial "card.page.html" . }}
+    {{ partial "eyecatch_image.html" . }}
+  {{ end }}
+
+  <!-- paginator nav -->
+  {{ partial "paginator.html" . }}
+
+
+</div>
+
+{{ end }}
+
+
+{{ define "side" }}
+  <!-- サイドバーにはタグとカテゴリー表示はやめる -->
+  <!-- {{ partial "side.taxonomy.html" . }} -->
+<div class="Box Box--blue p-2 mb-3">
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=digital_software&f=ifr&linkID=f9a893361db665292b58fe0752366942&t=pasokon-news-22&tracking_id=pasokon-news-22" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+  </div>
+{{ end }}

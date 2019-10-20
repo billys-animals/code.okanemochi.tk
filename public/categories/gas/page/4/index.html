@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>
+      
+  GAS &ndash; CODE SNIPET
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="CODE SNIPET">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://code.okanemochi.tk/">
+    CODE SNIPET
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item " href="/post/">
+      
+      <span>記事</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/tags/">
+      
+      <span>タグ</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/categories/">
+      
+      <span>カテゴリー</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>GAS</h1>
+  
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/%E6%8C%87%E5%AE%9A%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E7%A9%BA%E7%99%BD%E3%82%84%E6%94%B9%E8%A1%8C%E3%82%92%E7%A9%BA%E6%96%87%E5%AD%97%E3%81%AB%E7%BD%AE%E6%8F%9B%E3%81%99%E3%82%8Btrim/">
+        <div class="h2 mt-1 mb-1">指定文字列の空白や改行を空文字に置換する(Trim)</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    /************************************************************************************ 【関数概要】trim_ 【引数】target 【戻り値】targetの含まれる文字列中の空白を除去した形で呼び出し元に返す ***********************************************************************************/ function trim_(target){ if (target == null || target ==
+    <a class="muted-link" href="/2018/02/27/%E6%8C%87%E5%AE%9A%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E7%A9%BA%E7%99%BD%E3%82%84%E6%94%B9%E8%A1%8C%E3%82%92%E7%A9%BA%E6%96%87%E5%AD%97%E3%81%AB%E7%BD%AE%E6%8F%9B%E3%81%99%E3%82%8Btrim/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/%E6%8C%87%E5%AE%9A%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AE%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80id%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">
+        <div class="h2 mt-1 mb-1">指定フォルダのフォルダIDを取得する　/　子フォルダを作成する</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    //画像保存フォルダへの参照を得る var BASE_FOLDER = "images"; all_folders = DriveApp.getFolders(); while ( all_folders.hasNext() ){ var folder = all_folders.next(); if ( folder.getName() == BASE_FOLDER ){ //imagesのフォルダIDを取得 TOP_FOLDER = DriveApp.getFolderById(folder.getId()); } } /********************************************************************* ** 指定した2階層
+    <a class="muted-link" href="/2018/02/27/%E6%8C%87%E5%AE%9A%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AE%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80id%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/%E6%8C%87%E5%AE%9Aurl%E3%81%AE%E6%83%85%E5%A0%B1%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%82%84%E7%94%BB%E5%83%8F%E3%82%84pdf%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%AEgoogledrive%E3%81%AB%E4%BF%9D/">
+        <div class="h2 mt-1 mb-1">指定URLの情報（テキストや画像やPDF)を指定のGoogleDriveに保存する</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    /************************************************************* * 指定URLの情報（テキストや画像やPDF)を指定のGoogleDriveに保存する *************************************************************/ function getTargetUrlDownload(url,strName,folder_id,save_folder) { var fileName = strName; var response = UrlFetchApp.fetch(url); var fileBlob = response.getBlob().setName(fileName); var file = DriveApp.createFile(fileBlob); var folders = DriveApp.getFolderById(folder_id); // ルー
+    <a class="muted-link" href="/2018/02/27/%E6%8C%87%E5%AE%9Aurl%E3%81%AE%E6%83%85%E5%A0%B1%E3%83%86%E3%82%AD%E3%82%B9%E3%83%88%E3%82%84%E7%94%BB%E5%83%8F%E3%82%84pdf%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%AEgoogledrive%E3%81%AB%E4%BF%9D/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/6%E5%88%86%E5%88%B6%E9%99%90%E5%9B%9E%E9%81%BF%E3%81%AE%E5%9F%BA%E6%9C%AC%E5%87%A6%E7%90%86%E6%A7%8B%E9%80%A0/">
+        <div class="h2 mt-1 mb-1">6分制限回避の基本処理構造</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 function functionTest1(){ //先ずトリガーを削除 var res = deleteTrigger(&#39;
+    <a class="muted-link" href="/2018/02/27/6%E5%88%86%E5%88%B6%E9%99%90%E5%9B%9E%E9%81%BF%E3%81%AE%E5%9F%BA%E6%9C%AC%E5%87%A6%E7%90%86%E6%A7%8B%E9%80%A0/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/getamazonapi_itemlookup%E6%88%BB%E3%82%8A%E3%81%AF-getcontenttext/">
+        <div class="h2 mt-1 mb-1">getAmazonAPI_ItemLookup（戻りは.getContentText()）</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    //リクエストを発行する var ResultText = getAmazonAPI_ItemLookup(strASIN); //戻り値の中に「ItemlockupResponse」も文字列があるか否か判定 //（ 0:なし,1:あり ） var
+    <a class="muted-link" href="/2018/02/27/getamazonapi_itemlookup%E6%88%BB%E3%82%8A%E3%81%AF-getcontenttext/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/googledrive%E3%81%AE%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E5%90%8D%E3%81%A8%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80id%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">
+        <div class="h2 mt-1 mb-1">GoogleDriveのフォルダ名とフォルダIDを取得する</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    function getAllFolderID(){ var all_folders = DriveApp.getFolders(); while (all_folders.hasNext()){ var folder = all_folders.next(); Logger.log('Folder名:'+folder.getName() + 'FolderID:' + folder.getId()); } } &nbsp;
+    <a class="muted-link" href="/2018/02/27/googledrive%E3%81%AE%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E5%90%8D%E3%81%A8%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80id%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/categories/gas/page/3/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/categories/gas/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/categories/gas/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/categories/gas/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">4</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/categories/gas/page/5/">5</a>
+            
+          
+      
+
+      
+      <a href="/categories/gas/page/5/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+<div class="Box Box--blue p-2 mb-3">
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=primemusic&f=ifr&linkID=7465bcf76f1f36796076c2680261a314&t=pasokon-news-22&tracking_id=pasokon-news-22" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe></div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/bash" class="link-gray text-emphasized css-truncate-target"><span class="">Bash</span></a>
+      <span class="text-right Counter">3</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/docker" class="link-gray text-emphasized css-truncate-target"><span class="">Docker</span></a>
+      <span class="text-right Counter">1</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/dos" class="link-gray text-emphasized css-truncate-target"><span class="">Dos</span></a>
+      <span class="text-right Counter">1</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/excel-vba" class="link-gray text-emphasized css-truncate-target"><span class="">Excel vba</span></a>
+      <span class="text-right Counter">22</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/gas" class="link-gray text-emphasized css-truncate-target"><span class="">Gas</span></a>
+      <span class="text-right Counter">28</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/html" class="link-gray text-emphasized css-truncate-target"><span class="">Html</span></a>
+      <span class="text-right Counter">1</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/php" class="link-gray text-emphasized css-truncate-target"><span class="">Php</span></a>
+      <span class="text-right Counter">3</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/python" class="link-gray text-emphasized css-truncate-target"><span class="">Python</span></a>
+      <span class="text-right Counter">3</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/sqlite" class="link-gray text-emphasized css-truncate-target"><span class="">Sqlite</span></a>
+      <span class="text-right Counter">19</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/%e6%9c%aa%e5%88%86%e9%a1%9e" class="link-gray text-emphasized css-truncate-target"><span class="">未分類</span></a>
+      <span class="text-right Counter">1</span>
+    </span>
+    
+  </div>
+<div class="Box Box--blue p-2 mb-3">
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=foodbeverage&f=ifr&linkID=0aaf3f36831dbef10e1c8fcc15788007&t=pasokon-news-22&tracking_id=pasokon-news-22" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+</div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    sphia &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+
+	<script type="text/javascript">
+	    amzn_assoc_ad_type = "link_enhancement_widget";
+	    amzn_assoc_tracking_id = "pasokon-news-22";
+	    amzn_assoc_linkid = "5d961039d13a5190e1ea2fb9081d0bd3";
+	    amzn_assoc_placement = "";
+	    amzn_assoc_marketplace = "amazon";
+	    amzn_assoc_region = "JP";
+	</script>
+	<script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
+
+  </body>
+</html>

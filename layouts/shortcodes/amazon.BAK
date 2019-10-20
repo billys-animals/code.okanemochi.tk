@@ -1,0 +1,19 @@
+{{ $amazon_data_html := .Site.Data.amazon }}
+
+{{ if .IsNamedParams }}
+  {{ $.Scratch.Add "amazonItemId" ( .Get "id") }}
+{{ else }}
+  {{ $.Scratch.Add "amazonItemId" ( .Get 0) }}
+{{ end }}
+
+{{ $itemId := $.Scratch.Get "amazonItemId" }}
+
+<div>
+{{ range $amazon_data_html }}
+  {{ if eq .asin $itemId }}
+{{ .image_tag | safeHTML }}
+<a href={{ .url | safeHTML }}>{{ .title }} </a>
+
+  {{ end }}
+{{ end }}
+<div>

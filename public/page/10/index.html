@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+	<meta name="generator" content="Hugo 0.57.2" />
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>
+      
+  CODE SNIPET &ndash; CODE SNIPET
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="CODE SNIPET">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://code.okanemochi.tk/">
+    CODE SNIPET
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item " href="/post/">
+      
+      <span>記事</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/tags/">
+      
+      <span>タグ</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/categories/">
+      
+      <span>カテゴリー</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>CODE SNIPET</h1>
+  
+
+  
+  <div>
+    <div>
+      <a href="/2018/03/08/29-dump%e3%81%a7%e3%83%87%e3%83%bc%e3%82%bf%e3%82%92%e6%9b%b8%e3%81%8d%e3%81%a0%e3%81%9d%e3%81%86/">
+        <h3 class="buy-box">29 .dumpでデータを書きだそう</h3>
+      </a>
+      
+      
+      
+
+
+<a href='/categories/sqlite' class="muted-link">
+  <span class="Label Label--gray-darker">Sqlite</span>
+</a>
+
+
+
+
+      2018-03-08
+    </div>
+    drop table if exists users; create table users ( id integer primary key, name ); insert into users (name) values ('a'); insert into users (name) values ('b'); insert into users (name) values ('c'); .output users.dump.sql .dump users PRAGMA foreign_keys=OFF; BEGIN TRANSACTION; CREATE TABLE users ( id integer primary key, name ); INSERT INTO "users" VALUES(1,'a'); INSERT INTO "users" VALUES(2,'b'); INSERT INTO "users" VALUES(3,'taguchi'); COMMIT; &nbsp;
+    <br />
+    
+
+
+<img src="">
+
+
+  </div>
+  
+  <div>
+    <div>
+      <a href="/2018/03/08/30-csv%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab%e3%82%92%e6%89%b1%e3%81%a3%e3%81%a6%e3%81%bf%e3%82%88%e3%81%86/">
+        <h3 class="buy-box">30 csvファイルを扱ってみよう</h3>
+      </a>
+      
+      
+      
+
+
+<a href='/categories/sqlite' class="muted-link">
+  <span class="Label Label--gray-darker">Sqlite</span>
+</a>
+
+
+
+
+      2018-03-08
+    </div>
+    drop table if exists users; create table users ( id integer primary key, name, score ); insert into users (name, score) values ('a', 10); insert into users (name, score) values ('b', 20); insert into users (name, score) values ('c', 30); create table temp (name, score); .mode csv -- .import users.csv users .import users.csv temp insert into users (name, score) select name, score from temp; select * from users; drop table
+    <br />
+    
+
+
+<img src="">
+
+
+  </div>
+  
+  <div>
+    <div>
+      <a href="/2018/02/28/amazon_pa_api_itemlockup/">
+        <h3 class="buy-box">AMAZON_PA_API_Itemlockup</h3>
+      </a>
+      
+      
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      2018-02-28
+    </div>
+    /* Amazon PA API 関連のアカウント情報 */ var AWS_KEYS; var AWS_SCEC; var AWS_ASOSIEITO; var namespace_url = 'http://webservices.amazon.com/AWSECommerceService/2011-08-01'; /************************************/ var wait_time; var mSheet = SpreadsheetApp.getActiveSpreadsheet(); var sheet_setting = mSheet.getSheetByName("設定"); /********************************************************************* ** Amazon AWS API
+    <br />
+    
+
+
+<img src="">
+
+
+  </div>
+  
+  <div>
+    <div>
+      <a href="/2018/02/28/bat%e3%83%95%e3%82%a1%e3%82%a4%e3%83%ab/">
+        <h3 class="buy-box">BATファイル</h3>
+      </a>
+      
+      
+      
+
+
+<a href='/categories/dos' class="muted-link">
+  <span class="Label Label--gray-darker">DOS</span>
+</a>
+
+
+
+
+      2018-02-28
+    </div>
+    @echo off ::不要情報なしで拡張子CSVのファイル名を表示させファイルにリダイレクト dir *.csv /b &gt; csvfilename.txt ::上のファイルの内容（１行）を環境変数(CSVFI
+    <br />
+    
+
+
+<img src="">
+
+
+  </div>
+  
+  <div>
+    <div>
+      <a href="/2018/02/28/worksheet%e5%8f%82%e7%85%a7api%e9%ab%98%e9%80%9f%e5%8c%96%e5%87%a6%e7%90%86%e3%83%99%e3%83%bc%e3%82%b9/">
+        <h3 class="buy-box">Worksheet参照API高速化処理ベース</h3>
+      </a>
+      
+      
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      2018-02-28
+    </div>
+    //シート書き出し範囲を予め定義 var strSheetRange = "A2:Z10002"; var objNowRange = sheet1.getRange(strSheetRange); var varNowValues = objNowRange.getValues(); function func1(){ /* 何らかの処理*/ //セル参照変数に書き込む varNowValues[0][0]='test_word'; /* 何らかの処理*/ //配列に溜めた
+    <br />
+    
+
+
+<img src="">
+
+
+  </div>
+  
+  <div>
+    <div>
+      <a href="/2018/02/27/ebay-api%e5%91%bc%e3%81%b3%e5%87%ba%e3%81%97%e3%82%b5%e3%83%b3%e3%83%97%e3%83%ab/">
+        <h3 class="buy-box">eBAY API呼び出しサンプル</h3>
+      </a>
+      
+      
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      2018-02-27
+    </div>
+    var result3 = setEbayGetItemShippingRequest(ItemID); var response3 = UrlFetchApp.fetch(trading_url, options); var document3 = XmlService.parse(response3); var root3=document3.getRootElement(); var NS3=XmlService.getNamespace(namespace_url); var ShippingServiceOptions=root3.getChild('ShippingDetails',NS3).getChildren('ShippingServiceOptions', NS3); var col_num = 6; for(mm=0;mm&lt;=ShippingServiceOptions.length-1;mm++){ var ShippingService = ShippingServiceOptions[mm].getChild('ShippingService', NS3).getValue(); var ShippingServiceCost = ShippingServiceOptions[mm].getChild('ShippingServiceCost', NS3).getValue(); var ShippingServiceAdditionalCost = ShippingServiceOptions[mm].getChild('ShippingServiceAdditionalCost', NS3).getValue(); Write_Sheet_range[now_row_position][col_num]=ShippingService; Write_Sheet_range[now_row_position][col_num+1]=ShippingServiceCost; Write_Sheet_range[now_row_position][col_num+2]=ShippingServiceAdditionalCost; col_num += 3; } sheet_setting.getRange("E3").setValue(now_row_position); now_row_position=now_row_position+1; &nbsp;
+    <br />
+    
+
+
+<img src="">
+
+
+  </div>
+  
+
+  
+  <nav class="paginate-container">
+    <div class="pagination">
+      <ul>
+        
+        <a href="/page/9/" class="previous_page">Prev</a>
+        
+
+        
+          <a href="/">
+            1
+          </a>
+        
+          <a href="/page/2/">
+            2
+          </a>
+        
+          <a href="/page/3/">
+            3
+          </a>
+        
+          <a href="/page/4/">
+            4
+          </a>
+        
+          <a href="/page/5/">
+            5
+          </a>
+        
+          <a href="/page/6/">
+            6
+          </a>
+        
+          <a href="/page/7/">
+            7
+          </a>
+        
+          <a href="/page/8/">
+            8
+          </a>
+        
+          <a href="/page/9/">
+            9
+          </a>
+        
+          <a href="/page/10/">
+            10
+          </a>
+        
+          <a href="/page/11/">
+            11
+          </a>
+        
+          <a href="/page/12/">
+            12
+          </a>
+        
+          <a href="/page/13/">
+            13
+          </a>
+        
+          <a href="/page/14/">
+            14
+          </a>
+        
+
+        
+        <a href="/page/11/" class="next_page">Next</a>
+        
+      </ul>
+    </div>
+  </nav>
+  
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+          <div id="toc" class="mb-3">
+          </div>
+          
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    sphia &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+
+	<script type="text/javascript">
+	    amzn_assoc_ad_type = "link_enhancement_widget";
+	    amzn_assoc_tracking_id = "pasokon-news-22";
+	    amzn_assoc_linkid = "5d961039d13a5190e1ea2fb9081d0bd3";
+	    amzn_assoc_placement = "";
+	    amzn_assoc_marketplace = "amazon";
+	    amzn_assoc_region = "JP";
+	</script>
+	<script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
+
+  </body>
+</html>

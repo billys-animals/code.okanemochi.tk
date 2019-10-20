@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>
+      
+  Hmac_SHA &ndash; CODE SNIPET
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="&#39;advapi32.dll &#39;http://su-u.jp/juju/%B5%A4%A4%DE%A4%B0%A4%EC%C6%FC%B5%AD/2007-03-08.html Private Declare PtrSafe Function CryptAcquireContext Lib &#34;advapi32.dll&#34; Alias &#34;CryptAcquireContextA&#34; _ (ByRef phProv As Long, ByVal pszContainer As String, ByVal pszProvider As String, _ ByVal dwProvType As Long, ByVal dwFlags As Long) As Long Private Declare PtrSafe Function CryptReleaseContext Lib &#34;advapi32.dll&#34; _ (ByVal hProv As Long, ByVal dwFlags As Long) As Long Private Declare PtrSafe Function CryptCreateHash Lib &#34;advapi32.dll&#34; _ (ByVal hProv As Long, ByVal Algid As Long, ByVal|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="CODE SNIPET">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://code.okanemochi.tk/">
+    CODE SNIPET
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item " href="/post/">
+      
+      <span>記事</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/tags/">
+      
+      <span>タグ</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/categories/">
+      
+      <span>カテゴリー</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">Hmac_SHA</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/excel-vba' class="muted-link">
+  <span class="Label Label--gray-darker">Excel VBA</span>
+</a>
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2019-06-12. Published at: 2019-06-12.">
+        
+          Published: 2019-06-12
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+
+<article>
+
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <pre class="lang:vb decode:true ">'advapi32.dll
+'http://su-u.jp/juju/%B5%A4%A4%DE%A4%B0%A4%EC%C6%FC%B5%AD/2007-03-08.html
+Private Declare PtrSafe Function CryptAcquireContext Lib "advapi32.dll" Alias "CryptAcquireContextA" _
+                            (ByRef phProv As Long, ByVal pszContainer As String, ByVal pszProvider As String, _
+                             ByVal dwProvType As Long, ByVal dwFlags As Long) As Long
+Private Declare PtrSafe Function CryptReleaseContext Lib "advapi32.dll" _
+                            (ByVal hProv As Long, ByVal dwFlags As Long) As Long
+Private Declare PtrSafe Function CryptCreateHash Lib "advapi32.dll" _
+                            (ByVal hProv As Long, ByVal Algid As Long, ByVal hKey As Long, ByVal dwFlags As Long, _
+                             ByRef phHash As Long) As Long
+Private Declare PtrSafe Function CryptDestroyHash Lib "advapi32.dll" _
+                            (ByVal hHash As Long) As Long
+Private Declare PtrSafe Function CryptHashData Lib "advapi32.dll" _
+                            (ByVal hHash As Long, pbData As Any, ByVal cbData As Long, ByVal dwFlags As Long) As Long
+Private Declare PtrSafe Function CryptGetHashParam Lib "advapi32.dll" _
+                            (ByVal hHash As Long, ByVal dwParam As Long, pbData As Any, ByRef pcbData As Long, _
+                             ByVal dwFlags As Long) As Long
+
+Private Const PROV_RSA_FULL   As Long = 1
+Private Const PROV_RSA_AES    As Long = 24
+Private Const CRYPT_VERIFYCONTEXT As Long = &HF0000000
+
+Private Const HP_HASHVAL      As Long = 2
+Private Const HP_HASHSIZE     As Long = 4
+
+Private Const ALG_TYPE_ANY    As Long = 0
+Private Const ALG_CLASS_HASH  As Long = 32768
+
+Private Const ALG_SID_MD2     As Long = 1
+Private Const ALG_SID_MD4     As Long = 2
+Private Const ALG_SID_MD5     As Long = 3
+Private Const ALG_SID_SHA     As Long = 4
+Private Const ALG_SID_SHA_256 As Long = 12
+Private Const ALG_SID_SHA_384 As Long = 13
+Private Const ALG_SID_SHA_512 As Long = 14
+
+Private Const CALG_MD2        As Long = (ALG_CLASS_HASH Or ALG_TYPE_ANY Or ALG_SID_MD2)
+Private Const CALG_MD4        As Long = (ALG_CLASS_HASH Or ALG_TYPE_ANY Or ALG_SID_MD4)
+Private Const CALG_MD5        As Long = (ALG_CLASS_HASH Or ALG_TYPE_ANY Or ALG_SID_MD5)
+Private Const CALG_SHA        As Long = (ALG_CLASS_HASH Or ALG_TYPE_ANY Or ALG_SID_SHA)
+Private Const CALG_SHA_256    As Long = (ALG_CLASS_HASH Or ALG_TYPE_ANY Or ALG_SID_SHA_256)
+Private Const CALG_SHA_384    As Long = (ALG_CLASS_HASH Or ALG_TYPE_ANY Or ALG_SID_SHA_384)
+Private Const CALG_SHA_512    As Long = (ALG_CLASS_HASH Or ALG_TYPE_ANY Or ALG_SID_SHA_512)
+
+' Create Hash
+Private Function CreateHash(abytData() As Byte, ByVal lngAlgID As Long) As String
+    Dim hProv As Long, hHash As Long
+    Dim abytHash(0 To 63) As Byte
+    Dim lngLength As Long
+    Dim lngResult As Long
+    Dim strHash As String
+    Dim i As Long
+    strHash = ""
+    If CryptAcquireContext(hProv, vbNullString, vbNullString, _
+                           IIf(lngAlgID &gt;= CALG_SHA_256, PROV_RSA_AES, PROV_RSA_FULL), _
+                           CRYPT_VERIFYCONTEXT) &lt;&gt; 0& Then
+        If CryptCreateHash(hProv, lngAlgID, 0&, 0&, hHash) &lt;&gt; 0& Then
+            lngLength = UBound(abytData()) - LBound(abytData()) + 1
+            If lngLength &gt; 0 Then lngResult = CryptHashData(hHash, abytData(LBound(abytData())), lngLength, 0&) _
+                             Else lngResult = CryptHashData(hHash, ByVal 0&, 0&, 0&)
+            If lngResult &lt;&gt; 0& Then
+                lngLength = UBound(abytHash()) - LBound(abytHash()) + 1
+                If CryptGetHashParam(hHash, HP_HASHVAL, abytHash(LBound(abytHash())), lngLength, 0&) &lt;&gt; 0& Then
+                    For i = 0 To lngLength - 1
+                        strHash = strHash & Right$("0" & Hex$(abytHash(LBound(abytHash()) + i)), 2)
+                    Next
+                End If
+            End If
+            CryptDestroyHash hHash
+        End If
+        CryptReleaseContext hProv, 0&
+    End If
+    CreateHash = LCase$(strHash)
+End Function
+
+' Create Hash From String(Shift_JIS)
+Private Function CreateHashString(ByVal strData As String, ByVal lngAlgID As Long) As String
+    CreateHashString = CreateHash(StrConv(strData, vbFromUnicode), lngAlgID)
+End Function
+
+' Create Hash From File
+Private Function CreateHashFile(ByVal strFileName As String, ByVal lngAlgID As Long) As String
+    Dim abytData() As Byte
+    Dim intFile As Integer
+    Dim lngError As Long
+    On Error Resume Next
+        If Len(Dir(strFileName)) &gt; 0 Then
+            intFile = FreeFile
+            Open strFileName For Binary Access Read Shared As #intFile
+            abytData() = InputB(LOF(intFile), #intFile)
+            Close #intFile
+        End If
+        lngError = Err.Number
+    On Error GoTo 0
+    If lngError = 0 Then CreateHashFile = CreateHash(abytData(), lngAlgID) _
+                    Else CreateHashFile = ""
+End Function
+
+' MD5
+Public Function CreateMD5Hash(abytData() As Byte) As String
+    CreateMD5Hash = CreateHash(abytData(), CALG_MD5)
+End Function
+Public Function CreateMD5HashString(ByVal strData As String) As String
+    CreateMD5HashString = CreateHashString(strData, CALG_MD5)
+End Function
+Public Function CreateMD5HashFile(ByVal strFileName As String) As String
+    CreateMD5HashFile = CreateHashFile(strFileName, CALG_MD5)
+End Function
+
+' SHA-1
+Public Function CreateSHA1Hash(abytData() As Byte) As String
+    CreateSHA1Hash = CreateHash(abytData(), CALG_SHA)
+End Function
+Public Function CreateSHA1HashString(ByVal strData As String) As String
+    CreateSHA1HashString = CreateHashString(strData, CALG_SHA)
+End Function
+Public Function CreateSHA1HashFile(ByVal strFileName As String) As String
+    CreateSHA1HashFile = CreateHashFile(strFileName, CALG_SHA)
+End Function
+
+' SHA-256
+Public Function CreateSHA256Hash(abytData() As Byte) As String
+    CreateSHA256Hash = CreateHash(abytData(), CALG_SHA_256)
+End Function
+Public Function CreateSHA256HashString(ByVal strData As String) As String
+    CreateSHA256HashString = CreateHashString(strData, CALG_SHA_256)
+End Function
+Public Function CreateSHA256HashFile(ByVal strFileName As String) As String
+    CreateSHA256HashFile = CreateHashFile(strFileName, CALG_SHA_256)
+End Function
+
+' SHA-384
+Public Function CreateSHA384Hash(abytData() As Byte) As String
+    CreateSHA384Hash = CreateHash(abytData(), CALG_SHA_384)
+End Function
+Public Function CreateSHA384HashString(ByVal strData As String) As String
+    CreateSHA384HashString = CreateHashString(strData, CALG_SHA_384)
+End Function
+Public Function CreateSHA384HashFile(ByVal strFileName As String) As String
+    CreateSHA384HashFile = CreateHashFile(strFileName, CALG_SHA_384)
+End Function
+
+' SHA-512
+Public Function CreateSHA512Hash(abytData() As Byte) As String
+    CreateSHA512Hash = CreateHash(abytData(), CALG_SHA_512)
+End Function
+Public Function CreateSHA512HashString(ByVal strData As String) As String
+    CreateSHA512HashString = CreateHashString(strData, CALG_SHA_512)
+End Function
+Public Function CreateSHA512HashFile(ByVal strFileName As String) As String
+    CreateSHA512HashFile = CreateHashFile(strFileName, CALG_SHA_512)
+End Function
+
+'Hmac-SHA256
+'http://plus-sys.jugem.jp/?eid=215
+Public Function Hmac(sKey, rawTextToSign As String) As String
+
+Dim arKey() As Byte
+Dim ipad As String
+Dim opad As String
+Dim buff() As Byte, offset As Integer
+
+'初期化
+    ipad = ""
+    opad = ""
+    Hash = ""
+    ReDim arKey(0 To 63)
+
+'秘密鍵から1文字づつ読込み、文字コードへ変換後配列へ格納
+    For i = 0 To Len(sKey) - 1
+        arKey(i) = Asc(Mid(sKey, i + 1, 1))
+    Next
+
+'64文字に満たない分は、ゼロセット
+    For i = Len(sKey) To 63
+        arKey(i) = 0
+    Next
+
+'innerpad及びouterpad作成
+    For i = 0 To 63
+        ipad = ipad & Chr(arKey(i) Xor &H36)
+        opad = opad & Chr(arKey(i) Xor &H5C)
+    Next
+
+'ハッシュ処理1回目
+'(innerpad+メッセージ文字列)をハッシュ・・・ハッシュ結果1
+    Hash = CreateSHA256HashString(ipad & rawTextToSign)
+
+'ハッシュ処理2回目
+    buff = StrConv(opad, vbFromUnicode)
+    offset = UBound(buff)
+    ReDim Preserve buff(offset + Len(Hash) \ 2)
+
+    For i = 1 To (Len(Hash) \ 2)
+        buff(offset + i) = CByte("&H" & Mid(Hash, (i - 1) * 2 + 1, 2))
+    Next
+    Hash = CreateSHA256Hash(buff)
+    Hmac = Hash
+
+End Function
+
+Function StrHex(text As String) As String
+
+Dim lCount As Long
+Dim sResult As String
+Dim lLength As Long
+
+    lLength = Len(text)
+    
+    For lCount = 1 To lLength Step 2
+        sResult = sResult & Chr(Val("&H" & Mid(text, lCount, 2)))
+    Next
+    
+    StrHex = sResult
+
+End Function
+
+Public Function HEX2BIN(ByVal hx As String) As String
+    Dim num As Long
+    Dim bin As String
+    Dim i As Integer
+    num = CLng("&H" & hx)
+        For i = Len(hx) * 4 - 1 To 0 Step -1
+            bin = bin & -CInt((num And (2 ^ i)) &lt;&gt; 0)
+        Next
+    HEX2BIN = bin
+End Function
+
+
+'n進数の文字列strNumberを10進数の数字に変換して返す
+'http://www5d.biglobe.ne.jp/~tomoya03/shtml/algorithm/Convert.htm
+Public Function ncdec(ByVal n As Long, ByVal strNumber As String) As Long
+
+    Dim lngt As Long
+    Dim c As Long
+    Dim i As Long
+    lngt = 0&
+    c = 1&
+    For i = 1& To Len(strNumber)
+        lngt = lngt + subncdec(Left$(Right$(strNumber, i), 1)) * c
+        c = c * n
+    Next i
+    ncdec = lngt
+
+End Function
+
+Public Function subncdec(ByVal b As String) As Long
+    
+    Dim r As Long
+    r = Asc(UCase(b))
+    If r &gt; 64& Then
+        subncdec = r - 55&
+    Else
+        subncdec = CLng(b)
+    End If
+    
+End Function
+
+
+Public Function GetSignatureDate() As String
+        'Amazon Product Advertising署名作成に使うタイムスタンプ
+        GetSignatureDate = Format(Date, "yyyy-mm-dd") & "T" & Format(CDate(DateAdd("h", -9, Time)), "hh%3AMM%3Ass") & "Z"
+End Function
+</pre>
+
+<p>&nbsp;</p>
+
+  </section>
+  
+  <div class="xPrevNextLink">
+  
+    <div class="xPrevNextLink_prev">
+      <a href="https://code.okanemochi.tk/2019/06/12/%E5%BC%95%E6%95%B0%E6%96%87%E5%AD%97%E5%88%97%E3%81%8C%E3%81%99%E3%81%B9%E3%81%A6%E6%95%B0%E5%AD%97%E3%81%8B%E3%81%A9%E3%81%86%E3%81%8B%E5%88%A4%E5%AE%9A%E3%81%99%E3%82%8B/">引数文字列がすべて数字かどうか判定する</a>
+    </div>
+  
+  
+    <div class="xPrevNextLink_next">
+      <a href="https://code.okanemochi.tk/2019/06/12/cxmlhttphandler/">CXMLHTTPHandler</a>
+    </div>
+  
+</div>
+  
+</article>
+
+
+
+
+<h3>関連記事</h3>
+<ul>
+  
+  <li><a href="/2019/06/12/%E5%92%8C%E6%9A%A6%E8%A5%BF%E6%9A%A6%E6%B7%B7%E5%90%88%E8%AA%95%E7%94%9F%E6%97%A5%E3%82%92%E8%A5%BF%E6%9A%A6%E3%81%AB%E7%B5%B1%E4%B8%80%E3%81%99%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB/">和暦西暦混合誕生日を西暦に統一するモジュール</a></li>
+  
+  <li><a href="/2019/06/12/office2010-64bit%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEado%E6%8E%A5%E7%B6%9A-ado%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E7%AF%84/">Office2010-64bit環境でのADO接続　ADOを使ってエクセルシート範囲内の重複数を得る</a></li>
+  
+  <li><a href="/2019/06/12/%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E4%BB%98%E3%81%A8%E6%9B%9C%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97%E5%B9%B3%E6%88%90%E5%B9%B4%E6%9C%88%E6%97%A5/">現在の日付と曜日を取得（平成〇〇年〇月〇日〇曜日）</a></li>
+  
+  <li><a href="/2019/06/12/%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80%E9%9A%9B%E3%81%AB%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%88%A4%E5%AE%9A%E3%81%97/">外部ファイルを読み込む際に文字コードを判定してから読み出す</a></li>
+  
+  <li><a href="/2019/06/12/url%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%A6%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%AB%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B%E3%83%97%E3%83%AD%E3%82%B0/">URLを指定してローカルにダウンロードするプログラム</a></li>
+  
+</ul>
+
+
+
+
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>Hmac_SHA</b>
+      
+    </div>
+  
+
+  
+    <div>
+
+      
+<div class="Box Box--blue p-2 mb-3">
+<h3>最新記事</h3>
+<ul>
+  
+    <li>
+      <b><a href="/2019/06/13/html%E8%A6%81%E7%B4%A0%E3%81%AE%E5%AD%A6%E7%BF%92/">詳解HTML 基礎文法編</a></b>
+      <time>2019-06-13</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/%E5%92%8C%E6%9A%A6%E8%A5%BF%E6%9A%A6%E6%B7%B7%E5%90%88%E8%AA%95%E7%94%9F%E6%97%A5%E3%82%92%E8%A5%BF%E6%9A%A6%E3%81%AB%E7%B5%B1%E4%B8%80%E3%81%99%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB/">和暦西暦混合誕生日を西暦に統一するモジュール</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/office2010-64bit%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEado%E6%8E%A5%E7%B6%9A-ado%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E7%AF%84/">Office2010-64bit環境でのADO接続　ADOを使ってエクセルシート範囲内の重複数を得る</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E4%BB%98%E3%81%A8%E6%9B%9C%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97%E5%B9%B3%E6%88%90%E5%B9%B4%E6%9C%88%E6%97%A5/">現在の日付と曜日を取得（平成〇〇年〇月〇日〇曜日）</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80%E9%9A%9B%E3%81%AB%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%88%A4%E5%AE%9A%E3%81%97/">外部ファイルを読み込む際に文字コードを判定してから読み出す</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+</ul>
+</div>
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    sphia &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+
+	<script type="text/javascript">
+	    amzn_assoc_ad_type = "link_enhancement_widget";
+	    amzn_assoc_tracking_id = "pasokon-news-22";
+	    amzn_assoc_linkid = "5d961039d13a5190e1ea2fb9081d0bd3";
+	    amzn_assoc_placement = "";
+	    amzn_assoc_marketplace = "amazon";
+	    amzn_assoc_region = "JP";
+	</script>
+	<script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
+
+  </body>
+</html>

@@ -1,0 +1,465 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>
+      
+  AMAZON_PA_API_Itemlockup &ndash; CODE SNIPET
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="/* Amazon PA API 関連のアカウント情報 */ var AWS_KEYS; var AWS_SCEC; var AWS_ASOSIEITO; var namespace_url = &#39;http://webservices.amazon.com/AWSECommerceService/2011-08-01&#39;; /************************************/ var wait_time; var mSheet = SpreadsheetApp.getActiveSpreadsheet(); var sheet_setting = mSheet.getSheetByName(&#34;設定&#34;); /********************************************************************* ** Amazon AWS API|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="CODE SNIPET">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://code.okanemochi.tk/">
+    CODE SNIPET
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item " href="/post/">
+      
+      <span>記事</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/tags/">
+      
+      <span>タグ</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/categories/">
+      
+      <span>カテゴリー</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">AMAZON_PA_API_Itemlockup</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2018-02-28. Published at: 2018-02-28.">
+        
+          Published: 2018-02-28
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+
+<article>
+
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <pre class="lang:js decode:true " title="amazon_pa_api_itemkockup">/*　Amazon PA API 関連のアカウント情報  */
+var AWS_KEYS;
+var AWS_SCEC;
+var AWS_ASOSIEITO;
+var namespace_url = 'http://webservices.amazon.com/AWSECommerceService/2011-08-01';
+/************************************/
+
+var wait_time;
+var mSheet = SpreadsheetApp.getActiveSpreadsheet();
+var sheet_setting = mSheet.getSheetByName("設定");
+
+
+/*********************************************************************
+**  Amazon AWS API利用に必要なパラメーターを読み込む
+*********************************************************************/
+function setAwsData(){
+  AWS_KEYS = sheet_setting.getRange("B1").getValue();
+  AWS_SCEC = sheet_setting.getRange("B2").getValue();
+  AWS_ASOSIEITO = sheet_setting.getRange("B3").getValue();
+  wait_time= Number(sheet_setting.getRange("B4").getValue())*1000;
+}
+
+
+function main(){
+
+  //初期設定
+  var resukt = setAwsData();
+  
+  //ASINを指定
+  strASIN　= "B077NPPGPB,B00F27JDTU";
+  
+  //リクエストを発行する
+  var ResultText = getAmazonAPI_ItemLookup(strASIN);
+  //戻り値の中に「ItemlockupResponse」も文字列があるか否か判定
+  //（　0:なし,1:あり　）
+  var flg_503 = chkItemLookupErrorResponse(ResultText)
+  
+  //ここではステータスが変わるまでとしているが無限ループになる可能性もあり
+  //場合によってはReTry回数を設定して制御が必要かも知れない
+  do{
+     if(flg_503 == 0){
+      //指定秒休む設定（任意に変える事）
+        var res = Utilities.sleep(wait_time);
+        var ResultText = getAmazonAPI_ItemLookup(strASIN);
+        flg_503 = chkItemLookupErrorResponse(ResultText)
+     }else{
+        flg_503 = 1;
+        var xx=XmlService.parse(ResultText);
+     }
+      
+  }while(flg_503!=1);
+       
+  var xx=XmlService.parse(ResultText);
+  var a = xx.getDescendants();
+  var base_col = 4;
+  
+  for(var i=0;i&lt;a.length;i++) {
+  
+     if(a[i].getType() == XmlService.ContentTypes.ELEMENT){
+       var res1 = a[i].asElement().getName();
+          
+       var order_asin = [];
+       var xx = a[i].asElement().getDescendants();
+       for(var s=0;s&lt;xx.length;s++){         
+          if(xx[s].getType() == XmlService.ContentTypes.ELEMENT){                      
+             switch(xx[s].asElement().getName()){
+                case "ASIN" :
+                   var ap1 = xx[s].asElement().getDescendants()
+                   var nowasin = ap1[0];
+                   nowasin = String(nowasin);
+                   now_row =getAsinRowNo(nowasin);
+                   break;
+                case "ImageSets":
+                   base_col = 4;
+                   var l_count=1;
+                   var xxx = xx[s].getDescendants();
+                   for(var ss=0;ss&lt;=xxx.length-1;ss++){         
+                      if(xxx[ss].getType() == XmlService.ContentTypes.ELEMENT){    
+                        var attr_name = xxx[ss].asElement().getName();
+                        if(attr_name == "LargeImage"){
+                          var www = xxx[ss].asElement().getDescendants();
+                            for(var sss=0;sss&lt;=www.length-1;sss++){         
+                               if(www[sss].getType() == XmlService.ContentTypes.ELEMENT){
+                                  var attr_name = www[sss].asElement().getName();
+                                  if(attr_name == "URL"){
+                                    var lurl =  www[sss].asElement().getValue();
+                                    //画像URLを取得して書き出す処理
+                                    
+                                    l_count=l_count+1;
+                                    base_col = base_col+1;
+                                  }
+                                }
+                                
+                            /*for sss end */    
+                            }
+                         }
+                      }
+                
+                 //ASIN毎のimagesets処理の終了区切り
+                 strASIN="";
+                 /*for ss end */ 
+                }
+              }       
+            } 
+           }
+         }
+         
+    /*for i end */ 
+    }
+   /* main end */
+  }
+  
+
+function main_type2(){
+
+  //初期設定
+  var resukt = setAwsData();
+  
+  //ASINを指定
+  strASIN　= "B077NPPGPB,B00F27JDTU";
+  
+  //リクエストを発行する
+  var ResultText = getAmazonAPI_ItemLookup(strASIN);
+  //戻り値の中に「ItemlockupResponse」も文字列があるか否か判定
+  //（　0:なし,1:あり　）
+  var flg_503 = chkItemLookupErrorResponse(ResultText)
+  
+  //ここではステータスが変わるまでとしているが無限ループになる可能性もあり
+  //場合によってはReTry回数を設定して制御が必要かも知れない
+  do{
+     if(flg_503 == 0){
+      //指定秒休む設定（任意に変える事）
+        var res = Utilities.sleep(wait_time);
+        var ResultText = getAmazonAPI_ItemLookup(strASIN);
+        flg_503 = chkItemLookupErrorResponse(ResultText)
+     }else{
+        flg_503 = 1;
+        var xx=XmlService.parse(ResultText);
+     }
+      
+  }while(flg_503!=1);
+       
+  var document = XmlService.parse(ResultText);
+  var root=document.getRootElement();
+  var NS = XmlService.getNamespace(namespace_url);
+      
+  var Item = root.getChild('Items', NS).getChildren('Item', NS);
+      
+  for(nn=0;nn&lt;=Item.length-1;nn++){
+      //var Item = root.getChild('Items', NS).getChild('Item', NS);
+      var ImageSet = Item[nn].getChild('ImageSets', NS).getChildren('ImageSet', NS); 
+      var strASIN = Item[nn].getChild('ASIN',NS).getText();
+      var num2 = ImageSet.length-1;
+          
+      for(s=0;s&lt;=num2;s++){
+        //var test2 = ImageSet[s].getChild('LargeImage', NS).getChild('URL', NS).getText();
+        var url =ImageSet[s].getChild('LargeImage', NS).getChild('URL', NS).getText();
+        //var image_name = second_folders[s] + '_' + String(s+1) + ".jpg";
+        //save_folder=second_folders[s];
+        //var res = getTargetUrlDownload(url,image_name,folder_id,save_folder);
+                          
+     }
+ 
+   }
+}
+
+/*********************************************************************
+**  引数にItemLookupResponseの文字列が存在するか否か返す
+*********************************************************************/
+function chkItemLookupErrorResponse(strResponse){
+  strResponse=String(strResponse);
+  strResponse = trim_(strResponse);
+  strResponse = strResponse.substring(0,100);
+
+  if(strResponse.indexOf('ItemLookupResponse') != -1){
+     return 1;
+  }else{
+     return 0;
+  }
+}
+
+/*************************************************************************
+getAmazonAPI_ItemLookup
+//ResponseGroup:"ItemAttributes,SalesRank,OfferSummary,Offers,ItemIds"
+アマゾンAWS APIを呼び出し結果を呼び出し元に返す
+*************************************************************************/
+
+function getAmazonAPI_ItemLookup(isbn){
+  var res = setAwsData();
+  AWS_BASE_URL="ecs.amazonaws.jp";
+  var u = "http://ecs.amazonaws.jp/onca/xml?";
+  var o1 = {
+      Service:"AWSECommerceService",
+      Version:"2011-08-01",
+      AssociateTag:AWS_ASOSIEITO,
+      Operation:"ItemLookup",
+      ItemId:isbn,
+      Timestamp:new Date().toISOString(),
+      AWSAccessKeyId:AWS_KEYS,
+      IdType:"ASIN",
+      ResponseGroup:"Images"
+      }
+  var a = Object.keys(o1).sort();
+  
+  a = a.map(function(key){
+    return key +"="+encodeURIComponent(o1[key]);
+  });
+
+  var uri = "GET" + "\n" + AWS_BASE_URL + "\n" + "/onca/xml" + "\n" + a.join("&");
+  var x = Utilities.base64Encode(Utilities.computeHmacSha256Signature(uri, AWS_SCEC));
+  var z = u + a.join("&") + "&Signature=" + encodeURIComponent(x);
+  var r = UrlFetchApp.fetch(z,{ muteHttpExceptions:true });
+  return r.getContentText();
+}
+
+
+/************************************************************************************
+【関数概要】trim_
+　　 
+【引数】target
+ 
+【戻り値】targetの含まれる文字列中の空白を除去した形で呼び出し元に返す
+***********************************************************************************/
+function trim_(target){
+  if (target == null || target == undefined){
+    return "";
+  }
+  return target.replace(/(^\s+)|(\s+$)/g, "");
+}</pre>
+
+<p>&nbsp;</p>
+
+  </section>
+  
+  <div class="xPrevNextLink">
+  
+    <div class="xPrevNextLink_prev">
+      <a href="https://code.okanemochi.tk/2018/02/28/bat%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/">BATファイル</a>
+    </div>
+  
+  
+    <div class="xPrevNextLink_next">
+      <a href="https://code.okanemochi.tk/2018/03/08/30-csv%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E6%89%B1%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86/">30 csvファイルを扱ってみよう</a>
+    </div>
+  
+</div>
+  
+</article>
+
+
+
+
+<h3>関連記事</h3>
+<ul>
+  
+  <li><a href="/2018/03/26/urlfetchapp-fetch%E6%99%82%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E5%80%A4%E4%B8%80%E8%A6%A7/">UrlFetchApp.fetch時のオプション値一覧</a></li>
+  
+  <li><a href="/2018/03/26/amazon-mws-api-feed/">Amazon MWS API FEED</a></li>
+  
+  <li><a href="/2018/03/21/amazonmws-api-sample/">AmazonMWS API  Sample</a></li>
+  
+  <li><a href="/2018/03/14/%E6%8C%87%E5%AE%9A%E6%97%A5%E6%99%82%E3%81%AB%E3%83%88%E3%83%AA%E3%82%AC%E3%83%BC%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B/">指定日時にトリガーを設定する</a></li>
+  
+  <li><a href="/2018/03/13/chatwork-api%E3%81%AB%E3%82%88%E3%82%8B%E6%8C%87%E5%AE%9A%E5%A0%B4%E6%89%80%E3%81%B8%E3%81%AE%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF/">Chatwork APIによる指定場所への書き込み</a></li>
+  
+</ul>
+
+
+
+
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>AMAZON_PA_API_Itemlockup</b>
+      
+    </div>
+  
+
+  
+    <div>
+
+      
+<div class="Box Box--blue p-2 mb-3">
+<h3>最新記事</h3>
+<ul>
+  
+    <li>
+      <b><a href="/2019/06/13/html%E8%A6%81%E7%B4%A0%E3%81%AE%E5%AD%A6%E7%BF%92/">詳解HTML 基礎文法編</a></b>
+      <time>2019-06-13</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/%E5%92%8C%E6%9A%A6%E8%A5%BF%E6%9A%A6%E6%B7%B7%E5%90%88%E8%AA%95%E7%94%9F%E6%97%A5%E3%82%92%E8%A5%BF%E6%9A%A6%E3%81%AB%E7%B5%B1%E4%B8%80%E3%81%99%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB/">和暦西暦混合誕生日を西暦に統一するモジュール</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/office2010-64bit%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEado%E6%8E%A5%E7%B6%9A-ado%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E7%AF%84/">Office2010-64bit環境でのADO接続　ADOを使ってエクセルシート範囲内の重複数を得る</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E4%BB%98%E3%81%A8%E6%9B%9C%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97%E5%B9%B3%E6%88%90%E5%B9%B4%E6%9C%88%E6%97%A5/">現在の日付と曜日を取得（平成〇〇年〇月〇日〇曜日）</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80%E9%9A%9B%E3%81%AB%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%88%A4%E5%AE%9A%E3%81%97/">外部ファイルを読み込む際に文字コードを判定してから読み出す</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+</ul>
+</div>
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    sphia &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+
+	<script type="text/javascript">
+	    amzn_assoc_ad_type = "link_enhancement_widget";
+	    amzn_assoc_tracking_id = "pasokon-news-22";
+	    amzn_assoc_linkid = "5d961039d13a5190e1ea2fb9081d0bd3";
+	    amzn_assoc_placement = "";
+	    amzn_assoc_marketplace = "amazon";
+	    amzn_assoc_region = "JP";
+	</script>
+	<script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
+
+  </body>
+</html>

@@ -1,0 +1,93 @@
+baseURL = "https://code.okanemochi.tk/"
+title = "CODE SNIPET"
+defaultContentLanguage="ja"
+languageCode = "ja"
+hasCJKLanguage = true 
+
+
+enableRobotsTXT = true
+enableEmoji = true
+
+theme = "hugo-primer"
+
+
+preserveTaxonomyNames = true
+
+
+
+paginate = 6
+rssLimit = 20
+
+
+
+pygmentsOptions = "linenos=table"
+pygmentsCodefences = true
+pygmentsUseClasses = true
+pygmentsCodefencesGuessSyntax = true
+
+# disqusShortname = ""      # disqus_shortname
+# googleAnalytics = "UA-114508959-4"      # UA-XXXXXXXX-X
+copyright = "sphia"       # default: author.name
+disqusShortname = "ＸＸＸ"
+
+
+[author]                  # essential                     # 必需
+  name = "スフィア"
+
+[sitemap]                 # essential                     # 必需
+  changefreq = "weekly"
+  priority = 0.5
+  filename = "sitemap.xml"
+
+[[menu.main]]
+  name = "記事"
+  weight = 20
+  identifier = "archives"
+  url = "/post/"
+[[menu.main]]
+  name = "タグ"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+[[menu.main]]
+  name = "カテゴリー"
+  weight = 40
+  identifier = "categories"
+  url = "/categories/"
+
+
+
+# Link custom CSS and JS assets
+
+#   (relative to /static/css and /static/js respectively)
+
+  customCSS = []            # if ['custom.css'], load '/static/css/custom.css' file
+
+  customJS = []             # if ['custom.js'], load '/static/js/custom.js' file
+
+# 関連記事の表示の設定
+[related]
+ 
+threshold = 80
+ 
+includeNewer = true
+ 
+toLower = false
+ 
+[[related.indices]]
+name = "keywords"
+weight = 150
+[[related.indices]]
+name  = "author"
+toLower = true
+weight = 30
+[[related.indices]]
+name  = "tags"
+weight = 100
+[[related.indices]]
+name  = "date"
+weight = 10
+pattern = "2006"
+[[related.indices]]
+name  = "categories"
+weight = 110

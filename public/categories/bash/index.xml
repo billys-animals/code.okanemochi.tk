@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>BASH on CODE SNIPET</title>
+    <link>https://code.okanemochi.tk/categories/bash/</link>
+    <description>Recent content in BASH on CODE SNIPET</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>sphia</copyright>
+    <lastBuildDate>Wed, 12 Jun 2019 11:06:02 +0000</lastBuildDate>
+    
+	<atom:link href="https://code.okanemochi.tk/categories/bash/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>シェルスクリプトでPHPプログラムを呼び出して処理させる例</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7php%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%82%92%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97%E3%81%A6%E5%87%A6/</link>
+      <pubDate>Wed, 12 Jun 2019 11:06:02 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E3%82%B7%E3%82%A7%E3%83%AB%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%A7php%E3%83%97%E3%83%AD%E3%82%B0%E3%83%A9%E3%83%A0%E3%82%92%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97%E3%81%A6%E5%87%A6/</guid>
+      <description>#PHP export LANG=&#34;ja_JP.eucJP&#34; /usr/bin/php /home/users/0/lolipop.jp-6334d3b4717c2113/web/radys_fassion_rss_tb.php exit &amp;nbsp;</description>
+    </item>
+    
+    <item>
+      <title>POSTスクリプトの例　Mobvle Typeへxmlrpc経由での投稿</title>
+      <link>https://code.okanemochi.tk/2019/06/12/post%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%AE%E4%BE%8B-mobvle-type%E3%81%B8xmlrpc%E7%B5%8C%E7%94%B1%E3%81%A7%E3%81%AE%E6%8A%95%E7%A8%BF/</link>
+      <pubDate>Wed, 12 Jun 2019 11:04:47 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/post%E3%82%B9%E3%82%AF%E3%83%AA%E3%83%97%E3%83%88%E3%81%AE%E4%BE%8B-mobvle-type%E3%81%B8xmlrpc%E7%B5%8C%E7%94%B1%E3%81%A7%E3%81%AE%E6%8A%95%E7%A8%BF/</guid>
+      <description>POST -c text/xml http://alvis.sakura.ne.jp/mt/mt-xmlrpc.cgi &amp;lt; sample.xml POST -c text/xml http://alvis.sakura.ne.jp/mt/mt-xmlrpc.cgi &amp;lt; sample2.xml POST -c text/xml http://alvis.sakura.ne.jp/mt/mt-xmlrpc.cgi &amp;lt; sample00.xml POST -c text/xml http://alvis.sakura.ne.jp/mt/mt-xmlrpc.cgi &amp;lt; mt.getCategoryList.xml POST -c text/xml http://alvis.sakura.ne.jp/mt/mt-xmlrpc.cgi &amp;lt; mt.getRecentPostTitles.xml POST -c text/xml http://alvis.sakura.ne.jp/mt/mt-xmlrpc.cgi &amp;lt; blogger.getUsersBlogs.xml POST -c text/xml http://alvis.sakura.ne.jp/mt/mt-xmlrpc.cgi &amp;lt; mt.supportedMethods.xml POST -c text/xml http://sea5.net/pivotx/metaweblog.php &amp;lt; blogger.getUsersBlogs.xml 以下はsample.xmlの例 &amp;lt;?xml version=&#39;1.0&#39; encoding=&#39;utf-8&#39;?&amp;gt; &amp;lt;methodCall&amp;gt; &amp;lt;methodName&amp;gt;metaWeblog.newPost&amp;lt;/methodName&amp;gt; &amp;lt;params&amp;gt; &amp;lt;param&amp;gt;</description>
+    </item>
+    
+    <item>
+      <title>ssh接続でサーバーのバックアップを取得するシェルスクリプト</title>
+      <link>https://code.okanemochi.tk/2019/06/12/ssh%E6%8E%A5%E7%B6%9A%E3%81%A7%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B%E3%82%B7%E3%82%A7/</link>
+      <pubDate>Wed, 12 Jun 2019 11:02:13 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/ssh%E6%8E%A5%E7%B6%9A%E3%81%A7%E3%82%B5%E3%83%BC%E3%83%90%E3%83%BC%E3%81%AE%E3%83%90%E3%83%83%E3%82%AF%E3%82%A2%E3%83%83%E3%83%97%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B%E3%82%B7%E3%82%A7/</guid>
+      <description>#!/bin/sh #PHP # バックアップを取るファイルがあるディレクトリまで移動します。 cd /home/alvis/www/wp # 必要なファイルのバックアップを取ります。 tar cvf /home/alvis/backup/wp/backup-`date +%Y%m%d`.tar ./ # バックアップした</description>
+    </item>
+    
+  </channel>
+</rss>

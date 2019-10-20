@@ -1,0 +1,34 @@
+<!-- Tags -->
+{{ if isset .Site.Taxonomies "tags" }}
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="{{ "tags/" | relLangURL }}" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    {{ range $name, $items := .Site.Taxonomies.tags }}
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="{{ "tags/" | relLangURL }}{{ $name | urlize | lower }}" class="link-gray text-emphasized css-truncate-target"><span class="">{{ $name | humanize }}</span></a>
+      <span class="text-right Counter">{{ len $items }}</span>
+    </span>
+    {{ end }}
+  </div>
+<div class="Box Box--blue p-2 mb-3">
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=primemusic&f=ifr&linkID=7465bcf76f1f36796076c2680261a314&t=pasokon-news-22&tracking_id=pasokon-news-22" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe></div>
+{{ end }}
+
+<!-- Categories -->
+{{ if isset .Site.Taxonomies "categories" }}
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="{{ "categories/" | relLangURL }}" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    {{ range $name, $items := .Site.Taxonomies.categories }}
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="{{ "categories/" | relLangURL }}{{ $name | urlize | lower }}" class="link-gray text-emphasized css-truncate-target"><span class="">{{ $name | humanize }}</span></a>
+      <span class="text-right Counter">{{ len $items }}</span>
+    </span>
+    {{ end }}
+  </div>
+<div class="Box Box--blue p-2 mb-3">
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=foodbeverage&f=ifr&linkID=0aaf3f36831dbef10e1c8fcc15788007&t=pasokon-news-22&tracking_id=pasokon-news-22" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+</div>
+{{ end }}

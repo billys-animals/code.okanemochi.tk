@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Contents &ndash; CODE SNIPET
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="CODE SNIPET">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://code.okanemochi.tk/">
+    CODE SNIPET
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item " href="/post/">
+      
+      <span>記事</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/tags/">
+      
+      <span>タグ</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/categories/">
+      
+      <span>カテゴリー</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/about/">
+      
+      <span>執筆者</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/privacy-policy/">
+      
+      <span>ポリシー</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Contents</h1>
+  
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/ebay-api/">
+        <div class="h2 mt-1 mb-1">eBAY API setEbayGetItemShippingRequest</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    /********************************************************* GetItemShipping APIへの接続情報を作成する関数 *********************************************************/ function setEbayGetItemShippingRequest(ItemID){ call_name = "GetItemShipping"; xml = '&lt;?xml version="1.0" encoding="utf-8"?&gt; \ &lt;GetItemShippingRequest xmlns="urn:ebay:apis:eBLBaseComponents"&gt; \ &lt;RequesterCredentials&gt; \ &lt;eBayAuthToken&gt;' + token + '&lt;/eBayAuthToken&gt; \ &lt;/RequesterCredentials&gt; \ &lt;Version&gt;793&lt;/Version&gt; \ &lt;ItemID&gt;' + ItemID + '&lt;/ItemID&gt; \ &lt;QuantitySold&gt;1&lt;/QuantitySold&gt; \ &lt;DestinationPostalCode&gt;40404&lt;/DestinationPostalCode&gt; \ &lt;DestinationCountryCode&gt;US&lt;/DestinationCountryCode&gt; \ &lt;ShippingInsuranceCost&gt;US&lt;/ShippingInsuranceCost&gt; \ &lt;ShippingServiceAdditionalCost &gt;US&lt;/ShippingServiceAdditionalCost&gt; \ &lt;/GetItemShippingRequest&gt;'; headers = { 'Content-Type': 'text/xml', 'X-EBAY-API-CERT-NAME' :
+    <a class="muted-link" href="/2018/02/27/ebay-api/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/ebay-api-getsellerlist-api%E3%81%B8%E3%81%AE%E6%8E%A5%E7%B6%9A%E6%83%85%E5%A0%B1%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E9%96%A2%E6%95%B0/">
+        <div class="h2 mt-1 mb-1">eBAY API GetSellerList APIへの接続情報を作成する関数</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    /********************************************************* GetSellerList APIへの接続情報を作成する関数 *********************************************************/ function setEbayGetSellerList(){ xml = '&lt;?xml version="1.0" encoding="utf-8"?&gt;\ &lt;GetSellerListRequest xmlns="urn:ebay:apis:eBLBaseComponents"&gt;\ &lt;RequesterCredentials&gt;\ &lt;eBayAuthToken&gt;' + token + '&lt;/eBayAuthToken&gt;\ &lt;/RequesterCredentials&gt;\ &lt;ErrorLanguage&gt;en_US&lt;/ErrorLanguage&gt;\ &lt;WarningLevel&gt;High&lt;/WarningLevel&gt;\ &lt;GranularityLevel&gt;Coarse&lt;/GranularityLevel&gt;\ &lt;StartTimeFrom&gt;' + getEbayDateFrom() + '&lt;/StartTimeFrom&gt;\ &lt;StartTimeTo&gt;' + getEbayDateTo() + '&lt;/StartTimeTo&gt;\ &lt;UserID&gt;' + seller_id + '&lt;/UserID&gt;\ &lt;IncludeWatchCount&gt;true&lt;/IncludeWatchCount&gt;\ &lt;Pagination&gt;\ &lt;EntriesPerPage&gt;' + String(getcount) + '&lt;/EntriesPerPage&gt;\ &lt;PageNumber&gt;' + getpageno + '&lt;/PageNumber&gt;\ &lt;/Pagination&gt;\ &lt;/GetSellerListRequest&gt;'; headers = {
+    <a class="muted-link" href="/2018/02/27/ebay-api-getsellerlist-api%E3%81%B8%E3%81%AE%E6%8E%A5%E7%B6%9A%E6%83%85%E5%A0%B1%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E9%96%A2%E6%95%B0/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/xml_to_json/">
+        <div class="h2 mt-1 mb-1">XML_to_JSON</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    /** * Converts an XML string to a JSON object, using logic similar to the * sunset method Xml.parse(). * @param {string} xml The XML to parse. * @returns {Object} The parsed XML. */ function XML_to_JSON(xml) { var doc = XmlService.parse(xml); var result = {}; var root = doc.getRootElement(); result[root.getName()] = elementToJSON(root); return result; } /** * Converts an XmlService element to a JSON object, using logic similar to * the sunset method Xml.
+    <a class="muted-link" href="/2018/02/27/xml_to_json/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/gmail%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E6%83%85%E5%A0%B1%E3%82%92%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8C%87%E5%AE%9A%E3%81%A7%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">
+        <div class="h2 mt-1 mb-1">Gmailのメール情報をキーワード指定で取得する</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    function getMail() { keyword = 'label:エントリ'; var threads = GmailApp.search(keyword); var mailCount = threads.length; var row = 0; for(var n in threads){ var thd = threads[n]; var msgs = thd.getMessages(); for(m in msgs){ var b_date = msgs[m].getDate(); var b_title = msgs[m].getSubject(); var b_from = msgs[m].getFrom(); var b_uniqeId = msgs[m].getId(); var b_body = msgs[m].getBody(); var b_text = msgs[m].getPlainBody(); }
+    <a class="muted-link" href="/2018/02/27/gmail%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E6%83%85%E5%A0%B1%E3%82%92%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8C%87%E5%AE%9A%E3%81%A7%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/%E6%8C%87%E5%AE%9A%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E7%A9%BA%E7%99%BD%E3%82%84%E6%94%B9%E8%A1%8C%E3%82%92%E7%A9%BA%E6%96%87%E5%AD%97%E3%81%AB%E7%BD%AE%E6%8F%9B%E3%81%99%E3%82%8Btrim/">
+        <div class="h2 mt-1 mb-1">指定文字列の空白や改行を空文字に置換する(Trim)</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    /************************************************************************************ 【関数概要】trim_ 【引数】target 【戻り値】targetの含まれる文字列中の空白を除去した形で呼び出し元に返す ***********************************************************************************/ function trim_(target){ if (target == null || target ==
+    <a class="muted-link" href="/2018/02/27/%E6%8C%87%E5%AE%9A%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E7%A9%BA%E7%99%BD%E3%82%84%E6%94%B9%E8%A1%8C%E3%82%92%E7%A9%BA%E6%96%87%E5%AD%97%E3%81%AB%E7%BD%AE%E6%8F%9B%E3%81%99%E3%82%8Btrim/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/%E6%8C%87%E5%AE%9A%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AE%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80id%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">
+        <div class="h2 mt-1 mb-1">指定フォルダのフォルダIDを取得する　/　子フォルダを作成する</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    //画像保存フォルダへの参照を得る var BASE_FOLDER = "images"; all_folders = DriveApp.getFolders(); while ( all_folders.hasNext() ){ var folder = all_folders.next(); if ( folder.getName() == BASE_FOLDER ){ //imagesのフォルダIDを取得 TOP_FOLDER = DriveApp.getFolderById(folder.getId()); } } /********************************************************************* ** 指定した2階層
+    <a class="muted-link" href="/2018/02/27/%E6%8C%87%E5%AE%9A%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AE%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80id%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/content/page/11/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/content/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/content/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/content/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/content/page/11/">11</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">12</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/content/page/13/">13</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/content/page/14/">14</a>
+            
+          
+      
+
+      
+      <a href="/content/page/13/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+  
+<div class="Box Box--blue p-2 mb-3">
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=digital_software&f=ifr&linkID=f9a893361db665292b58fe0752366942&t=pasokon-news-22&tracking_id=pasokon-news-22" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+  </div>
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    sphia &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+
+	<script type="text/javascript">
+	    amzn_assoc_ad_type = "link_enhancement_widget";
+	    amzn_assoc_tracking_id = "pasokon-news-22";
+	    amzn_assoc_linkid = "5d961039d13a5190e1ea2fb9081d0bd3";
+	    amzn_assoc_placement = "";
+	    amzn_assoc_marketplace = "amazon";
+	    amzn_assoc_region = "JP";
+	</script>
+	<script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
+
+  </body>
+</html>

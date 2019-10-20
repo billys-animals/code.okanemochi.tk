@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>
+      
+  Excel VBA &ndash; CODE SNIPET
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="CODE SNIPET">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://code.okanemochi.tk/">
+    CODE SNIPET
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item " href="/post/">
+      
+      <span>記事</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/tags/">
+      
+      <span>タグ</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/categories/">
+      
+      <span>カテゴリー</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Excel VBA</h1>
+  
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2019/06/12/%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E6%96%87%E5%AD%97%E5%88%97%E3%82%92shift_jis%E5%BD%A2%E5%BC%8F%E3%81%AB%E5%A4%89%E6%8F%9B%E3%81%99%E3%82%8B/">
+        <div class="h2 mt-1 mb-1">指定した文字列をSHIFT_JIS形式に変換する</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/excel-vba' class="muted-link">
+  <span class="Label Label--gray-darker">Excel VBA</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2019-06-12</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Function getConvShift_jis(ByVal strMoji As String) As String If (strMoji &lt;&gt; "") Then Dim n As Integer, m As Integer, buf As String n = FreeFile '１を返します Open ActiveWorkbook.Path & "\temp1.txt" For Output As n Print #n, strMoji Close n res = GetCharSetOfText(ActiveWorkbook.Path, "temp1") 'Res = WorksheetFunction.code(strMoji) With New ADODB.stream .Open .Type = adTypeText .WriteText strMoji .Position = 0 .charset = "x-sjis" getConvShift_jis = .ReadText
+    <a class="muted-link" href="/2019/06/12/%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E6%96%87%E5%AD%97%E5%88%97%E3%82%92shift_jis%E5%BD%A2%E5%BC%8F%E3%81%AB%E5%A4%89%E6%8F%9B%E3%81%99%E3%82%8B/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2019/06/12/%E3%83%90%E3%83%96%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88/">
+        <div class="h2 mt-1 mb-1">バブルソート</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/excel-vba' class="muted-link">
+  <span class="Label Label--gray-darker">Excel VBA</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2019-06-12</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Sub BubbleSort1(ByRef argAry() As Variant, intMode As Integer) Dim vSwap As Variant Dim strModeName As String 'Mode=0の場合はバイナリー比較、1の場合はテキスト比較 Dim i As Integer Dim j As Integer For i = LBound(argAry) To UBound(argAry) For j = UBound(argAry) To i Step -1 If (StrComp(argAry(i),
+    <a class="muted-link" href="/2019/06/12/%E3%83%90%E3%83%96%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2019/06/12/%E6%8C%87%E5%AE%9A%EF%BD%95%EF%BD%92%EF%BD%8C%E3%81%AEhtml%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">
+        <div class="h2 mt-1 mb-1">指定ＵＲＬのHTMLデータのソースを取得する</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/excel-vba' class="muted-link">
+  <span class="Label Label--gray-darker">Excel VBA</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2019-06-12</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Function getHtmlSource(ByVal strUrl As String) As String Dim xmlHttp As New MSXML2.XMLHTTP30 Dim response As String Call sleep(2) xmlHttp.Open "GET", strUrl, False xmlHttp.send '安定するまでちゃんと待つ While xmlHttp.readyState &lt;&gt; 4 xmlHttp.waitForResponse 600 Wend response = xmlHttp.responseText response = Trim(Replace(response, vbCrLf, "", , , vbTextCompare)) response = Trim(Replace(response, vbCr, "", , , vbTextCompare)) response = Trim(Replace(response, vbLf, "", , , vbTextCompare))
+    <a class="muted-link" href="/2019/06/12/%E6%8C%87%E5%AE%9A%EF%BD%95%EF%BD%92%EF%BD%8C%E3%81%AEhtml%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2019/06/12/cxmlhttphandler/">
+        <div class="h2 mt-1 mb-1">CXMLHTTPHandler</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/excel-vba' class="muted-link">
+  <span class="Label Label--gray-darker">Excel VBA</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2019-06-12</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Option Explicit Dim m_xmlHttp As MSXML2.XMLHTTP30 Public Sub Initialize(ByRef xDoc As MSXML2.XMLHTTP30) Set m_xmlHttp = xDoc End Sub Sub OnReadyStateChange(strRequest As String) If m_xmlHttp.readyState = 4 Then If m_xmlHttp.Status = 200 Then Else Call Sleep(100) Call m_xmlHttp.Open("GET", strRequest, False) m_xmlHttp.send End If End If End Sub  &nbsp;
+    <a class="muted-link" href="/2019/06/12/cxmlhttphandler/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2019/06/12/hmac_sha/">
+        <div class="h2 mt-1 mb-1">Hmac_SHA</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/excel-vba' class="muted-link">
+  <span class="Label Label--gray-darker">Excel VBA</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2019-06-12</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    'advapi32.dll 'http://su-u.jp/juju/%B5%A4%A4%DE%A4%B0%A4%EC%C6%FC%B5%AD/2007-03-08.html Private Declare PtrSafe Function CryptAcquireContext Lib "advapi32.dll" Alias "CryptAcquireContextA" _ (ByRef phProv As Long, ByVal pszContainer As String, ByVal pszProvider As String, _ ByVal dwProvType As Long, ByVal dwFlags As Long) As Long Private Declare PtrSafe Function CryptReleaseContext Lib "advapi32.dll" _ (ByVal hProv As Long, ByVal dwFlags As Long) As Long Private Declare PtrSafe Function CryptCreateHash Lib "advapi32.dll" _ (ByVal hProv As Long, ByVal Algid As Long, ByVal
+    <a class="muted-link" href="/2019/06/12/hmac_sha/">…</a>
+  </div>
+</div>
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2019/06/12/%E5%BC%95%E6%95%B0%E6%96%87%E5%AD%97%E5%88%97%E3%81%8C%E3%81%99%E3%81%B9%E3%81%A6%E6%95%B0%E5%AD%97%E3%81%8B%E3%81%A9%E3%81%86%E3%81%8B%E5%88%A4%E5%AE%9A%E3%81%99%E3%82%8B/">
+        <div class="h2 mt-1 mb-1">引数文字列がすべて数字かどうか判定する</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/excel-vba' class="muted-link">
+  <span class="Label Label--gray-darker">Excel VBA</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2019-06-12</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    Function IsSuji(ByVal strArg As String) As Boolean IsSuji = True For n = 1 To Len(strArg) If Asc(Mid(strArg, n, 1)) &lt; 48 Or Asc(Mid(strArg, n, 1)) &gt; 57 Then IsSuji = False Exit For End If Next n End Function &nbsp;
+    <a class="muted-link" href="/2019/06/12/%E5%BC%95%E6%95%B0%E6%96%87%E5%AD%97%E5%88%97%E3%81%8C%E3%81%99%E3%81%B9%E3%81%A6%E6%95%B0%E5%AD%97%E3%81%8B%E3%81%A9%E3%81%86%E3%81%8B%E5%88%A4%E5%AE%9A%E3%81%99%E3%82%8B/">…</a>
+  </div>
+</div>
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/categories/excel-vba/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/categories/excel-vba/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">2</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/categories/excel-vba/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/categories/excel-vba/page/4/">4</a>
+            
+          
+      
+
+      
+      <a href="/categories/excel-vba/page/3/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+
+  <div class="Box Box--blue p-2 mb-3 mt-5">
+    <a href="/tags/" class="link-gray-dark">
+      <h4>Tags</h4>
+    </a>
+    
+  </div>
+<div class="Box Box--blue p-2 mb-3">
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=primemusic&f=ifr&linkID=7465bcf76f1f36796076c2680261a314&t=pasokon-news-22&tracking_id=pasokon-news-22" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe></div>
+
+
+
+
+  <div class="Box Box--blue p-2 mb-3">
+    <a href="/categories/" class="link-gray-dark">
+      <h4>Categories</h4>
+    </a>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/bash" class="link-gray text-emphasized css-truncate-target"><span class="">Bash</span></a>
+      <span class="text-right Counter">3</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/docker" class="link-gray text-emphasized css-truncate-target"><span class="">Docker</span></a>
+      <span class="text-right Counter">1</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/dos" class="link-gray text-emphasized css-truncate-target"><span class="">Dos</span></a>
+      <span class="text-right Counter">1</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/excel-vba" class="link-gray text-emphasized css-truncate-target"><span class="">Excel vba</span></a>
+      <span class="text-right Counter">22</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/gas" class="link-gray text-emphasized css-truncate-target"><span class="">Gas</span></a>
+      <span class="text-right Counter">28</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/html" class="link-gray text-emphasized css-truncate-target"><span class="">Html</span></a>
+      <span class="text-right Counter">1</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/php" class="link-gray text-emphasized css-truncate-target"><span class="">Php</span></a>
+      <span class="text-right Counter">3</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/python" class="link-gray text-emphasized css-truncate-target"><span class="">Python</span></a>
+      <span class="text-right Counter">3</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/sqlite" class="link-gray text-emphasized css-truncate-target"><span class="">Sqlite</span></a>
+      <span class="text-right Counter">19</span>
+    </span>
+    
+    <span class="css-truncate no-wrap m-1 pl-1">
+      <a href="/categories/%e6%9c%aa%e5%88%86%e9%a1%9e" class="link-gray text-emphasized css-truncate-target"><span class="">未分類</span></a>
+      <span class="text-right Counter">1</span>
+    </span>
+    
+  </div>
+<div class="Box Box--blue p-2 mb-3">
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=foodbeverage&f=ifr&linkID=0aaf3f36831dbef10e1c8fcc15788007&t=pasokon-news-22&tracking_id=pasokon-news-22" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+</div>
+
+
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    sphia &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+
+	<script type="text/javascript">
+	    amzn_assoc_ad_type = "link_enhancement_widget";
+	    amzn_assoc_tracking_id = "pasokon-news-22";
+	    amzn_assoc_linkid = "5d961039d13a5190e1ea2fb9081d0bd3";
+	    amzn_assoc_placement = "";
+	    amzn_assoc_marketplace = "amazon";
+	    amzn_assoc_region = "JP";
+	</script>
+	<script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
+
+  </body>
+</html>

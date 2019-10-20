@@ -1,0 +1,540 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>
+      
+  Posts &ndash; CODE SNIPET
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="CODE SNIPET">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://code.okanemochi.tk/">
+    CODE SNIPET
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item selected" href="/post/">
+      
+      <span>記事</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/tags/">
+      
+      <span>タグ</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/categories/">
+      
+      <span>カテゴリー</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Posts</h1>
+  
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E4%BB%98%E3%82%92%E6%89%80%E5%AE%9A%E3%81%AE%E6%9B%B8%E5%BC%8F%E3%81%A7%E8%BF%94%E3%81%99/">
+        <div class="h2 mt-1 mb-1">現在の日付を所定の書式で返す</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    /********************************************************************* ** 現在の日付を所定の書式で返す *********************************************************************/ function getEbayDateTo(){ var now = new Date(); var y = now.getFullYear(); var m = now.getMonth() + 1; var d = now.getDate(); if (m &lt; 10) { m = '0' + m; } if (d &lt; 10) { d = '0' + d; } var new_date = y + '-' + m + '-'
+    <a class="muted-link" href="/2018/02/27/%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E4%BB%98%E3%82%92%E6%89%80%E5%AE%9A%E3%81%AE%E6%9B%B8%E5%BC%8F%E3%81%A7%E8%BF%94%E3%81%99/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/%E9%81%8E%E5%8E%BB%E5%88%A9%E7%94%A8%E3%81%AE%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE%E9%9B%86/">
+        <div class="h2 mt-1 mb-1">過去利用の正規表現集</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    var myRegexp = /&lt;h3 class=\"lvtitle\"&gt;([\s\S]*?)&lt;\/h3&gt;/gi; //eBAYのItemIDを抜き出す正規表現 var myRegexp = /\/([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])\?hash/gi; //eBay側で小細工している様でこの処理が必要 temp_iteid=temp_iteid.replace('&lt;h3class="lvtitle"&gt;&lt;ahref="https://www.ebay.com/itm/',""); &nbsp;
+    <a class="muted-link" href="/2018/02/27/%E9%81%8E%E5%8E%BB%E5%88%A9%E7%94%A8%E3%81%AE%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE%E9%9B%86/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/%E6%96%87%E5%AD%97%E5%88%97%E3%81%8B%E3%82%89%E6%8C%87%E5%AE%9A%E3%81%AE%E6%96%87%E5%AD%97%E3%81%A8%E6%96%87%E5%AD%97%E3%81%A7%E5%9B%B2%E3%81%BE%E3%82%8C%E3%81%9F%E9%83%A8%E5%88%86%E3%82%92%E5%88%87/">
+        <div class="h2 mt-1 mb-1">文字列から指定の文字と文字で囲まれた部分を切り出す</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    /********************************************************* 文字列から指定の文字と文字で囲まれた部分を切り出す *********************************************************/ function getStringSlice(content, startStr, endStr){ var indexStart = content.indexOf(startStr); if(indexStart == -1){ return ""; } else { indexStart += startStr.length return content.slice(indexStart, content.indexOf(endStr, indexStart)); } } &nbsp;
+    <a class="muted-link" href="/2018/02/27/%E6%96%87%E5%AD%97%E5%88%97%E3%81%8B%E3%82%89%E6%8C%87%E5%AE%9A%E3%81%AE%E6%96%87%E5%AD%97%E3%81%A8%E6%96%87%E5%AD%97%E3%81%A7%E5%9B%B2%E3%81%BE%E3%82%8C%E3%81%9F%E9%83%A8%E5%88%86%E3%82%92%E5%88%87/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/%E5%90%84%E7%A8%AEapi%E7%AD%89%E3%81%AEnamespace%E7%AD%89/">
+        <div class="h2 mt-1 mb-1">各種API等のNamespace等</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    var trading_url = "https://api.ebay.com/ws/api.dll"; var shopping_url = "http://open.api.ebay.com/shopping"; var namespace_url = "urn:ebay:apis:eBLBaseComponents"; var sclyping_base ="https://www.ebay.com/sch/"; var sclyping_sub ="/m.html"; var sclyping_loop = "https://www.ebay.com/sch/m.html?_ssn=UserID&_pgn=PAGE&_skc=START&rt=nc"; &nbsp;
+    <a class="muted-link" href="/2018/02/27/%E5%90%84%E7%A8%AEapi%E7%AD%89%E3%81%AEnamespace%E7%AD%89/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/ebay-api-setebaygetsellerevents/">
+        <div class="h2 mt-1 mb-1">eBAY API setEbayGetSellerEvents</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    /********************************************************* GetSellerEvents APIへの接続情報を作成する関数 *********************************************************/ function setEbayGetSellerEvents(){ call_name = "GetSellerEvents"; xml='&lt;?xml version="1.0" encoding="utf-8"?&gt;\ &lt;GetSellerEventsRequest xmlns="urn:ebay:apis:eBLBaseComponents"&gt;\ &lt;RequesterCredentials&gt;\ &lt;eBayAuthToken&gt;' + token + '&lt;/eBayAuthToken&gt;\ &lt;/RequesterCredentials&gt;\ &lt;StartTimeFrom&gt;' + strFrom + '&lt;/StartTimeFrom&gt;\ &lt;StartTimeTo&gt;' + strTo + '&lt;/StartTimeTo&gt;\ &lt;UserID&gt;' + seller_id + '&lt;/UserID&gt;\ &lt;OutputSelector&gt;ItemID,ListingStatus&lt;/OutputSelector&gt;\ &lt;DetailLevel&gt;ReturnAll&lt;/DetailLevel&gt;\ &lt;/GetSellerEventsRequest&gt;'; headers = { 'Content-Type': ' text/xml;charset=UTF-8', 'X-EBAY-API-CERT-NAME' : cer_id, 'X-EBAY-API-DEV-NAME' : dev_id, 'X-EBAY-API-SITEID' : site_id, 'X-EBAY-API-CALL-NAME'
+    <a class="muted-link" href="/2018/02/27/ebay-api-setebaygetsellerevents/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/ebay-api-2/">
+        <div class="h2 mt-1 mb-1">eBAY API setEbayGetSingleItem</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    /********************************************************* GetSingleItem APIへの接続情報を作成する関数 *********************************************************/ function setEbayGetSingleItem(ItemID){ call_name = "GetSingleItem"; xml = '&lt;?xml version="1.0" encoding="utf-8"?&gt; \ &lt;GetSingleItemRequest xmlns="urn:ebay:apis:eBLBaseComponents"&gt; \ &lt;ItemID&gt;' + ItemID + '&lt;/ItemID&gt; \ &lt;IncludeSelector&gt;ItemSpecifics&lt;/IncludeSelector&gt; \ &lt;/GetSingleItemRequest&gt;'; headers = { 'Content-Type': 'text/xml', 'X-EBAY-API-CALL-NAME' : call_name, 'X-EBAY-API-SITEID' : site_id, 'X-EBAY-API-VERSION' : '809', 'X-EBAY-API-REQUEST-ENCODING' : 'xml', 'X-EBAY-API-APP-NAME' : app_id }; options = { method: 'POST', muteHttpExceptions :
+    <a class="muted-link" href="/2018/02/27/ebay-api-2/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/post/page/10/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/post/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/post/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/post/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/post/page/10/">10</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">11</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/post/page/12/">12</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/post/page/14/">14</a>
+            
+          
+      
+
+      
+      <a href="/post/page/12/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+  
+<div class="Box Box--blue p-2 mb-3">
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=digital_software&f=ifr&linkID=f9a893361db665292b58fe0752366942&t=pasokon-news-22&tracking_id=pasokon-news-22" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+  </div>
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    sphia &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+
+	<script type="text/javascript">
+	    amzn_assoc_ad_type = "link_enhancement_widget";
+	    amzn_assoc_tracking_id = "pasokon-news-22";
+	    amzn_assoc_linkid = "5d961039d13a5190e1ea2fb9081d0bd3";
+	    amzn_assoc_placement = "";
+	    amzn_assoc_marketplace = "amazon";
+	    amzn_assoc_region = "JP";
+	</script>
+	<script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
+
+  </body>
+</html>

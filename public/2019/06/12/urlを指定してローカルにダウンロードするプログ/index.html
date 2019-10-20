@@ -1,0 +1,288 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex,nofollow">
+    <title>
+      
+  URLを指定してローカルにダウンロードするプログラム &ndash; CODE SNIPET
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="Public Declare PtrSafe Function URLDownloadToFile Lib &#34;urlmon&#34; _ Alias &#34;URLDownloadToFileA&#34; (ByVal pCaller As Long, _ ByVal szURL As String, ByVal szFileName As String, _ ByVal dwReserved As Long, ByVal lpfnCB As Long) As Long Sub getImages() With ActiveWorkbook.Sheets(&#34;Sheet1&#34;) DownloadFile = .Range(&#34;A2&#34;) SaveFolderName = ActiveWorkbook.Path SaveFileName = &#34;\&#34; &amp; .Range(&#34;B2&#34;) &amp; &#34;.jpg&#34; End With ret = URLDownloadToFile(0, DownloadFile, SaveFolderName &amp; SaveFileName, 0, 0) res1 = Split(getImageSize(SaveFolderName &amp; SaveFileName), &#34;,&#34;) yoko =|">
+    
+
+    <meta name="apple-mobile-web-app-title" content="CODE SNIPET">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://code.okanemochi.tk/">
+    CODE SNIPET
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item " href="/post/">
+      
+      <span>記事</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/tags/">
+      
+      <span>タグ</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/categories/">
+      
+      <span>カテゴリー</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div class="Subhead">
+  <div class="Subhead-heading">
+    <div class="h1 mt-3 mb-1">URLを指定してローカルにダウンロードするプログラム</div>
+  </div>
+  <div class="Subhead-description">
+    
+
+
+<a href='/categories/excel-vba' class="muted-link">
+  <span class="Label Label--gray-darker">Excel VBA</span>
+</a>
+
+
+
+
+
+    
+    <div class="float-md-right">
+      <span title="Lastmod: 2019-06-12. Published at: 2019-06-12.">
+        
+          Published: 2019-06-12
+        
+      </span>
+    </div>
+    
+  </div>
+</div>
+
+<article>
+
+  
+  <section class="pb-6 mb-3 border-bottom">
+    <pre class="lang:vb decode:true ">Public Declare PtrSafe Function URLDownloadToFile Lib "urlmon" _
+    Alias "URLDownloadToFileA" (ByVal pCaller As Long, _
+    ByVal szURL As String, ByVal szFileName As String, _
+    ByVal dwReserved As Long, ByVal lpfnCB As Long) As Long
+    
+
+Sub getImages()
+
+    With ActiveWorkbook.Sheets("Sheet1")
+        DownloadFile = .Range("A2")
+        SaveFolderName = ActiveWorkbook.Path
+        SaveFileName = "\" & .Range("B2") & ".jpg"
+    End With
+    
+    ret = URLDownloadToFile(0, DownloadFile, SaveFolderName & SaveFileName, 0, 0)
+    
+    res1 = Split(getImageSize(SaveFolderName & SaveFileName), ",")
+    
+    yoko = CLng(res1(0))
+    tate = CLng(res1(1))
+    
+    
+    newPath = SaveFolderName & "\Resized" & SaveFileName
+    
+    res = changeSize(SaveFolderName & SaveFileName)
+    
+    
+    res2 = Split(getImageSize(newPath), ",")
+    
+    n_yoko = CLng(res2(0))
+    n_tate = CLng(res2(1))
+    
+    MsgBox "元画像サイズ=" & yoko & " × " & tate & vbCrLf & "変換後画像サイズ=" & n_yoko & " × " & n_tate
+
+
+End Sub
+
+Function getImageSize(ByVal strFilePath As String) As String
+    Dim P As Object
+   
+    
+    ''選択した画像ファイルをオブジェクト型変数に格納する
+    Set P = LoadPicture(strFilePath)
+    'MsgBox CLng(P.Width * 0.0378) & " × " & CLng(P.Height * 0.0378)
+    getImageSize = CStr(CLng(P.Width * 0.0378)) & "," & CStr(CLng(P.Height * 0.0378))
+End Function
+
+Function changeSize(ByVal strImagePath As String) As Long
+ Shell ActiveWorkbook.Path & "\Shukusen\ShukuSen.exe " & strImagePath
+End Function
+
+</pre>
+
+<p>&nbsp;</p>
+
+  </section>
+  
+  <div class="xPrevNextLink">
+  
+    <div class="xPrevNextLink_prev">
+      <a href="https://code.okanemochi.tk/2019/06/12/%E6%96%87%E5%AD%97%E5%88%97%E5%87%BA%E7%8F%BE%E6%95%B0%E5%8F%96%E5%BE%97/">文字列出現数取得</a>
+    </div>
+  
+  
+    <div class="xPrevNextLink_next">
+      <a href="https://code.okanemochi.tk/2019/06/12/%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80%E9%9A%9B%E3%81%AB%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%88%A4%E5%AE%9A%E3%81%97/">外部ファイルを読み込む際に文字コードを判定してから読み出す</a>
+    </div>
+  
+</div>
+  
+</article>
+
+
+
+
+<h3>関連記事</h3>
+<ul>
+  
+  <li><a href="/2019/06/12/%E5%92%8C%E6%9A%A6%E8%A5%BF%E6%9A%A6%E6%B7%B7%E5%90%88%E8%AA%95%E7%94%9F%E6%97%A5%E3%82%92%E8%A5%BF%E6%9A%A6%E3%81%AB%E7%B5%B1%E4%B8%80%E3%81%99%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB/">和暦西暦混合誕生日を西暦に統一するモジュール</a></li>
+  
+  <li><a href="/2019/06/12/office2010-64bit%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEado%E6%8E%A5%E7%B6%9A-ado%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E7%AF%84/">Office2010-64bit環境でのADO接続　ADOを使ってエクセルシート範囲内の重複数を得る</a></li>
+  
+  <li><a href="/2019/06/12/%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E4%BB%98%E3%81%A8%E6%9B%9C%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97%E5%B9%B3%E6%88%90%E5%B9%B4%E6%9C%88%E6%97%A5/">現在の日付と曜日を取得（平成〇〇年〇月〇日〇曜日）</a></li>
+  
+  <li><a href="/2019/06/12/%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80%E9%9A%9B%E3%81%AB%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%88%A4%E5%AE%9A%E3%81%97/">外部ファイルを読み込む際に文字コードを判定してから読み出す</a></li>
+  
+  <li><a href="/2019/06/12/%E6%96%87%E5%AD%97%E5%88%97%E5%87%BA%E7%8F%BE%E6%95%B0%E5%8F%96%E5%BE%97/">文字列出現数取得</a></li>
+  
+</ul>
+
+
+
+
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+    <div id="toc" class="Box Box--blue mb-3">
+      <b>URLを指定してローカルにダウンロードするプログラム</b>
+      
+    </div>
+  
+
+  
+    <div>
+
+      
+<div class="Box Box--blue p-2 mb-3">
+<h3>最新記事</h3>
+<ul>
+  
+    <li>
+      <b><a href="/2019/06/13/html%E8%A6%81%E7%B4%A0%E3%81%AE%E5%AD%A6%E7%BF%92/">詳解HTML 基礎文法編</a></b>
+      <time>2019-06-13</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/%E5%92%8C%E6%9A%A6%E8%A5%BF%E6%9A%A6%E6%B7%B7%E5%90%88%E8%AA%95%E7%94%9F%E6%97%A5%E3%82%92%E8%A5%BF%E6%9A%A6%E3%81%AB%E7%B5%B1%E4%B8%80%E3%81%99%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB/">和暦西暦混合誕生日を西暦に統一するモジュール</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/office2010-64bit%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEado%E6%8E%A5%E7%B6%9A-ado%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E7%AF%84/">Office2010-64bit環境でのADO接続　ADOを使ってエクセルシート範囲内の重複数を得る</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E4%BB%98%E3%81%A8%E6%9B%9C%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97%E5%B9%B3%E6%88%90%E5%B9%B4%E6%9C%88%E6%97%A5/">現在の日付と曜日を取得（平成〇〇年〇月〇日〇曜日）</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+    <li>
+      <b><a href="/2019/06/12/%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80%E9%9A%9B%E3%81%AB%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%88%A4%E5%AE%9A%E3%81%97/">外部ファイルを読み込む際に文字コードを判定してから読み出す</a></b>
+      <time>2019-06-12</time>
+    </li>
+  
+</ul>
+</div>
+    </div>
+  
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    sphia &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+
+	<script type="text/javascript">
+	    amzn_assoc_ad_type = "link_enhancement_widget";
+	    amzn_assoc_tracking_id = "pasokon-news-22";
+	    amzn_assoc_linkid = "5d961039d13a5190e1ea2fb9081d0bd3";
+	    amzn_assoc_placement = "";
+	    amzn_assoc_marketplace = "amazon";
+	    amzn_assoc_region = "JP";
+	</script>
+	<script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
+
+  </body>
+</html>

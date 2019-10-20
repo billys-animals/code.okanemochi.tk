@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Excel VBA on CODE SNIPET</title>
+    <link>https://code.okanemochi.tk/categories/excel-vba/</link>
+    <description>Recent content in Excel VBA on CODE SNIPET</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>sphia</copyright>
+    <lastBuildDate>Wed, 12 Jun 2019 11:43:35 +0000</lastBuildDate>
+    
+	<atom:link href="https://code.okanemochi.tk/categories/excel-vba/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>和暦西暦混合誕生日を西暦に統一するモジュール</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E5%92%8C%E6%9A%A6%E8%A5%BF%E6%9A%A6%E6%B7%B7%E5%90%88%E8%AA%95%E7%94%9F%E6%97%A5%E3%82%92%E8%A5%BF%E6%9A%A6%E3%81%AB%E7%B5%B1%E4%B8%80%E3%81%99%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB/</link>
+      <pubDate>Wed, 12 Jun 2019 11:43:35 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E5%92%8C%E6%9A%A6%E8%A5%BF%E6%9A%A6%E6%B7%B7%E5%90%88%E8%AA%95%E7%94%9F%E6%97%A5%E3%82%92%E8%A5%BF%E6%9A%A6%E3%81%AB%E7%B5%B1%E4%B8%80%E3%81%99%E3%82%8B%E3%83%A2%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB/</guid>
+      <description>Public Const S_GANNEN As Integer = 1926 Public Const H_GANNEN As Integer = 1989 /*************************************************************** &#39;テスト和暦西暦混合シートのA列には和洋歴混合の誕生日が書かれている &#39;B 列に西暦に統一して書き出す処理のまとめ ***************************************************************/</description>
+    </item>
+    
+    <item>
+      <title>Office2010-64bit環境でのADO接続　ADOを使ってエクセルシート範囲内の重複数を得る</title>
+      <link>https://code.okanemochi.tk/2019/06/12/office2010-64bit%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEado%E6%8E%A5%E7%B6%9A-ado%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E7%AF%84/</link>
+      <pubDate>Wed, 12 Jun 2019 11:42:12 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/office2010-64bit%E7%92%B0%E5%A2%83%E3%81%A7%E3%81%AEado%E6%8E%A5%E7%B6%9A-ado%E3%82%92%E4%BD%BF%E3%81%A3%E3%81%A6%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%82%B7%E3%83%BC%E3%83%88%E7%AF%84/</guid>
+      <description>&#39;*************************************************************** &#39; ADOを使ってエクセルシート範囲内の重複数を得る &#39;*************************************************************** Function getDeplicationCount(strFiledName As String) As Long &#39;Const cnsProvider = &#34;Microsoft.Jet.OLEDB.4.0&#34; Const cnsProvider = &#34;Microsoft.ACE.OLEDB.12.0&#34; Const cnsExtProp = &#34;Extended Properties&#34; Const cnsExcel = &#34;Excel 8.0&#34; Const cnsYen = &#34;\&#34; Dim dbCon As ADODB.Connection Dim dbRes As ADODB.Recordset Dim GYO As Long, COL As Long</description>
+    </item>
+    
+    <item>
+      <title>現在の日付と曜日を取得（平成〇〇年〇月〇日〇曜日）</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E4%BB%98%E3%81%A8%E6%9B%9C%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97%E5%B9%B3%E6%88%90%E5%B9%B4%E6%9C%88%E6%97%A5/</link>
+      <pubDate>Wed, 12 Jun 2019 11:40:03 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E4%BB%98%E3%81%A8%E6%9B%9C%E6%97%A5%E3%82%92%E5%8F%96%E5%BE%97%E5%B9%B3%E6%88%90%E5%B9%B4%E6%9C%88%E6%97%A5/</guid>
+      <description>&#39;現在の日付と曜日を取得 Function getToday() As String getToday = Format(Now(), &#34;Long Date&#34;) &amp; &#34; &#34; &amp; getYoubi End Function &#39;今日の曜日を取得 Function getYoubi() As String Dim lngYobiNo As Long lngYobiNo = Format(Now(), &#34;w&#34;) Select Case lngYobiNo Case 1: getYoubi = &#34;日曜日&#34; Case 2: getYoubi = &#34;月曜日&#34;</description>
+    </item>
+    
+    <item>
+      <title>外部ファイルを読み込む際に文字コードを判定してから読み出す</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80%E9%9A%9B%E3%81%AB%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%88%A4%E5%AE%9A%E3%81%97/</link>
+      <pubDate>Wed, 12 Jun 2019 11:38:22 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E5%A4%96%E9%83%A8%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E8%AA%AD%E3%81%BF%E8%BE%BC%E3%82%80%E9%9A%9B%E3%81%AB%E6%96%87%E5%AD%97%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E5%88%A4%E5%AE%9A%E3%81%97/</guid>
+      <description>Private Function readFile(strFilename As String, intPos As Integer) As String Dim strTemp As String Dim strCharset As String Dim strfullFilename As String strPath = ActiveWorkbook.Path strfullFilename = strPath &amp; &#34;\&#34; &amp; strFilename strCharset = GetCharSetOfText(strPath &amp; &#34;\&#34;, strFilename) Dim Arr() Dim txt As Object Set txt = CreateObject(&#34;ADODB.Stream&#34;) txt.Type = 2 txt.charSet = strCharset txt.Open txt.LoadFromFile (strfullFilename) txt.Position = 0 readFile = txt.ReadText() txt.Close Set txt = Nothing End Function</description>
+    </item>
+    
+    <item>
+      <title>URLを指定してローカルにダウンロードするプログラム</title>
+      <link>https://code.okanemochi.tk/2019/06/12/url%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%A6%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%AB%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B%E3%83%97%E3%83%AD%E3%82%B0/</link>
+      <pubDate>Wed, 12 Jun 2019 11:36:55 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/url%E3%82%92%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%A6%E3%83%AD%E3%83%BC%E3%82%AB%E3%83%AB%E3%81%AB%E3%83%80%E3%82%A6%E3%83%B3%E3%83%AD%E3%83%BC%E3%83%89%E3%81%99%E3%82%8B%E3%83%97%E3%83%AD%E3%82%B0/</guid>
+      <description>Public Declare PtrSafe Function URLDownloadToFile Lib &#34;urlmon&#34; _ Alias &#34;URLDownloadToFileA&#34; (ByVal pCaller As Long, _ ByVal szURL As String, ByVal szFileName As String, _ ByVal dwReserved As Long, ByVal lpfnCB As Long) As Long Sub getImages() With ActiveWorkbook.Sheets(&#34;Sheet1&#34;) DownloadFile = .Range(&#34;A2&#34;) SaveFolderName = ActiveWorkbook.Path SaveFileName = &#34;\&#34; &amp; .Range(&#34;B2&#34;) &amp; &#34;.jpg&#34; End With ret = URLDownloadToFile(0, DownloadFile, SaveFolderName &amp; SaveFileName, 0, 0) res1 = Split(getImageSize(SaveFolderName &amp; SaveFileName), &#34;,&#34;) yoko =</description>
+    </item>
+    
+    <item>
+      <title>文字列出現数取得</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E6%96%87%E5%AD%97%E5%88%97%E5%87%BA%E7%8F%BE%E6%95%B0%E5%8F%96%E5%BE%97/</link>
+      <pubDate>Wed, 12 Jun 2019 11:36:00 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E6%96%87%E5%AD%97%E5%88%97%E5%87%BA%E7%8F%BE%E6%95%B0%E5%8F%96%E5%BE%97/</guid>
+      <description>&#39;################################################################################ &#39;# ＜機能名＞ 文字列出現数取得 &#39;# ＜機能概要＞ 対象文字内に検索文字の出現数を求める &#39;# ＜引数＞ pText：対象文字 &#39;# pMoji：検索文字 &#39;# ＜返却</description>
+    </item>
+    
+    <item>
+      <title>指定した文字列をSHIFT_JIS形式に変換する</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E6%96%87%E5%AD%97%E5%88%97%E3%82%92shift_jis%E5%BD%A2%E5%BC%8F%E3%81%AB%E5%A4%89%E6%8F%9B%E3%81%99%E3%82%8B/</link>
+      <pubDate>Wed, 12 Jun 2019 11:35:34 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E6%8C%87%E5%AE%9A%E3%81%97%E3%81%9F%E6%96%87%E5%AD%97%E5%88%97%E3%82%92shift_jis%E5%BD%A2%E5%BC%8F%E3%81%AB%E5%A4%89%E6%8F%9B%E3%81%99%E3%82%8B/</guid>
+      <description>Function getConvShift_jis(ByVal strMoji As String) As String If (strMoji &amp;lt;&amp;gt; &#34;&#34;) Then Dim n As Integer, m As Integer, buf As String n = FreeFile &#39;１を返します Open ActiveWorkbook.Path &amp; &#34;\temp1.txt&#34; For Output As n Print #n, strMoji Close n res = GetCharSetOfText(ActiveWorkbook.Path, &#34;temp1&#34;) &#39;Res = WorksheetFunction.code(strMoji) With New ADODB.stream .Open .Type = adTypeText .WriteText strMoji .Position = 0 .charset = &#34;x-sjis&#34; getConvShift_jis = .ReadText</description>
+    </item>
+    
+    <item>
+      <title>バブルソート</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E3%83%90%E3%83%96%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88/</link>
+      <pubDate>Wed, 12 Jun 2019 11:30:58 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E3%83%90%E3%83%96%E3%83%AB%E3%82%BD%E3%83%BC%E3%83%88/</guid>
+      <description>Sub BubbleSort1(ByRef argAry() As Variant, intMode As Integer) Dim vSwap As Variant Dim strModeName As String &#39;Mode=0の場合はバイナリー比較、1の場合はテキスト比較 Dim i As Integer Dim j As Integer For i = LBound(argAry) To UBound(argAry) For j = UBound(argAry) To i Step -1 If (StrComp(argAry(i),</description>
+    </item>
+    
+    <item>
+      <title>指定ＵＲＬのHTMLデータのソースを取得する</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E6%8C%87%E5%AE%9A%EF%BD%95%EF%BD%92%EF%BD%8C%E3%81%AEhtml%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</link>
+      <pubDate>Wed, 12 Jun 2019 11:30:14 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E6%8C%87%E5%AE%9A%EF%BD%95%EF%BD%92%EF%BD%8C%E3%81%AEhtml%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E3%82%BD%E3%83%BC%E3%82%B9%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
+      <description>Function getHtmlSource(ByVal strUrl As String) As String Dim xmlHttp As New MSXML2.XMLHTTP30 Dim response As String Call sleep(2) xmlHttp.Open &#34;GET&#34;, strUrl, False xmlHttp.send &#39;安定するまでちゃんと待つ While xmlHttp.readyState &amp;lt;&amp;gt; 4 xmlHttp.waitForResponse 600 Wend response = xmlHttp.responseText response = Trim(Replace(response, vbCrLf, &#34;&#34;, , , vbTextCompare)) response = Trim(Replace(response, vbCr, &#34;&#34;, , , vbTextCompare)) response = Trim(Replace(response, vbLf, &#34;&#34;, , , vbTextCompare))</description>
+    </item>
+    
+    <item>
+      <title>CXMLHTTPHandler</title>
+      <link>https://code.okanemochi.tk/2019/06/12/cxmlhttphandler/</link>
+      <pubDate>Wed, 12 Jun 2019 11:29:03 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/cxmlhttphandler/</guid>
+      <description>Option Explicit Dim m_xmlHttp As MSXML2.XMLHTTP30 Public Sub Initialize(ByRef xDoc As MSXML2.XMLHTTP30) Set m_xmlHttp = xDoc End Sub Sub OnReadyStateChange(strRequest As String) If m_xmlHttp.readyState = 4 Then If m_xmlHttp.Status = 200 Then Else Call Sleep(100) Call m_xmlHttp.Open(&#34;GET&#34;, strRequest, False) m_xmlHttp.send End If End If End Sub  &amp;nbsp;</description>
+    </item>
+    
+    <item>
+      <title>Hmac_SHA</title>
+      <link>https://code.okanemochi.tk/2019/06/12/hmac_sha/</link>
+      <pubDate>Wed, 12 Jun 2019 11:27:51 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/hmac_sha/</guid>
+      <description>&#39;advapi32.dll &#39;http://su-u.jp/juju/%B5%A4%A4%DE%A4%B0%A4%EC%C6%FC%B5%AD/2007-03-08.html Private Declare PtrSafe Function CryptAcquireContext Lib &#34;advapi32.dll&#34; Alias &#34;CryptAcquireContextA&#34; _ (ByRef phProv As Long, ByVal pszContainer As String, ByVal pszProvider As String, _ ByVal dwProvType As Long, ByVal dwFlags As Long) As Long Private Declare PtrSafe Function CryptReleaseContext Lib &#34;advapi32.dll&#34; _ (ByVal hProv As Long, ByVal dwFlags As Long) As Long Private Declare PtrSafe Function CryptCreateHash Lib &#34;advapi32.dll&#34; _ (ByVal hProv As Long, ByVal Algid As Long, ByVal</description>
+    </item>
+    
+    <item>
+      <title>引数文字列がすべて数字かどうか判定する</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E5%BC%95%E6%95%B0%E6%96%87%E5%AD%97%E5%88%97%E3%81%8C%E3%81%99%E3%81%B9%E3%81%A6%E6%95%B0%E5%AD%97%E3%81%8B%E3%81%A9%E3%81%86%E3%81%8B%E5%88%A4%E5%AE%9A%E3%81%99%E3%82%8B/</link>
+      <pubDate>Wed, 12 Jun 2019 11:26:28 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E5%BC%95%E6%95%B0%E6%96%87%E5%AD%97%E5%88%97%E3%81%8C%E3%81%99%E3%81%B9%E3%81%A6%E6%95%B0%E5%AD%97%E3%81%8B%E3%81%A9%E3%81%86%E3%81%8B%E5%88%A4%E5%AE%9A%E3%81%99%E3%82%8B/</guid>
+      <description>Function IsSuji(ByVal strArg As String) As Boolean IsSuji = True For n = 1 To Len(strArg) If Asc(Mid(strArg, n, 1)) &amp;lt; 48 Or Asc(Mid(strArg, n, 1)) &amp;gt; 57 Then IsSuji = False Exit For End If Next n End Function &amp;nbsp;</description>
+    </item>
+    
+    <item>
+      <title>正規表現による置換パターン集</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE%E3%81%AB%E3%82%88%E3%82%8B%E7%BD%AE%E6%8F%9B%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E9%9B%86/</link>
+      <pubDate>Wed, 12 Jun 2019 11:25:31 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE%E3%81%AB%E3%82%88%E3%82%8B%E7%BD%AE%E6%8F%9B%E3%83%91%E3%82%BF%E3%83%BC%E3%83%B3%E9%9B%86/</guid>
+      <description>Set RE = CreateObject(&#34;VBScript.RegExp&#34;) &#39;置換パターン strPattern = &#34;&amp;lt;span class=&#34;&#34;line&#34;&#34;&amp;gt;([\s\S]*?)&amp;lt;\/a&amp;gt;&#34; strPattern = &#34;&amp;lt;td colspan=&#34;&#34;3&#34;&#34; set_culumn=&#34;&#34;address&#34;&#34;&amp;gt;([\s\S]*?)&amp;lt;\/td&amp;gt;&#34; strPattern = &#34;&amp;lt;div class=&#34;&#34;result-list&#34;&#34;&amp;gt;([\s\S]*?)&amp;lt;!--▲▲検索結</description>
+    </item>
+    
+    <item>
+      <title>セル内入力データの空白やセル内改行コードを消去する関数</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E3%82%BB%E3%83%AB%E5%86%85%E5%85%A5%E5%8A%9B%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%A9%BA%E7%99%BD%E3%82%84%E3%82%BB%E3%83%AB%E5%86%85%E6%94%B9%E8%A1%8C%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E6%B6%88/</link>
+      <pubDate>Wed, 12 Jun 2019 11:24:20 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E3%82%BB%E3%83%AB%E5%86%85%E5%85%A5%E5%8A%9B%E3%83%87%E3%83%BC%E3%82%BF%E3%81%AE%E7%A9%BA%E7%99%BD%E3%82%84%E3%82%BB%E3%83%AB%E5%86%85%E6%94%B9%E8%A1%8C%E3%82%B3%E3%83%BC%E3%83%89%E3%82%92%E6%B6%88/</guid>
+      <description>&#39;セル内入力データの空白やセル内改行コードを消去する関数 Private Function ZeroClear(varTarget As Variant) As Variant &#39;半角・全角のスペースを消去 ZeroClear = Replace(Replace(varTarget, &#34; &#34;, &#34;&#34;), &#34; &#34;, &#34;&#34;) &#39;セル内改行コードを消去</description>
+    </item>
+    
+    <item>
+      <title>HTMLソースなどに含まれる＆＜＞”’などをエスケープする</title>
+      <link>https://code.okanemochi.tk/2019/06/12/html%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AA%E3%81%A9%E3%81%AB%E5%90%AB%E3%81%BE%E3%82%8C%E3%82%8B%E3%81%AA%E3%81%A9%E3%82%92%E3%82%A8%E3%82%B9%E3%82%B1/</link>
+      <pubDate>Wed, 12 Jun 2019 11:23:22 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/html%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AA%E3%81%A9%E3%81%AB%E5%90%AB%E3%81%BE%E3%82%8C%E3%82%8B%E3%81%AA%E3%81%A9%E3%82%92%E3%82%A8%E3%82%B9%E3%82%B1/</guid>
+      <description>Public Function changeEscapeStrings(contents As String) As String Dim varTemp As Variant varTemp = contents &#39;最初に&amp;を変換しないとエスケープ文字を対象にしてしまう！！ varTemp = Replace(varTemp, &#34;&amp;&#34;, &#34;&amp;amp;&#34;, , , vbTextCompare) varTemp = Replace(varTemp, &#34;&amp;lt;&#34;, &#34;&amp;lt;&#34;, , , vbTextCompare) varTemp = Replace(varTemp, &#34;&amp;gt;&#34;, &#34;&amp;gt;&#34;, , , vbTextCompare) varTemp =</description>
+    </item>
+    
+    <item>
+      <title>HTMLソースなどのタグを全て消去する</title>
+      <link>https://code.okanemochi.tk/2019/06/12/html%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AA%E3%81%A9%E3%81%AE%E3%82%BF%E3%82%B0%E3%82%92%E5%85%A8%E3%81%A6%E6%B6%88%E5%8E%BB%E3%81%99%E3%82%8B/</link>
+      <pubDate>Wed, 12 Jun 2019 11:22:02 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/html%E3%82%BD%E3%83%BC%E3%82%B9%E3%81%AA%E3%81%A9%E3%81%AE%E3%82%BF%E3%82%B0%E3%82%92%E5%85%A8%E3%81%A6%E6%B6%88%E5%8E%BB%E3%81%99%E3%82%8B/</guid>
+      <description>Public Function del_html_all_tags(strRef As String) As String Dim objRE As Object Dim strPattern As String Set objRE = CreateObject(&#34;VBScript.RegExp&#34;) strPattern = &#34;&amp;lt;[^&amp;gt;]+&amp;gt;&#34; If (InStr(1, strRef, &#34;&amp;lt;br&amp;gt;&#34;, vbTextCompare) &amp;gt; 0) Then strRef = Replace(strRef, &#34;&amp;lt;br&amp;gt;&#34;, Chr(10)) End If strRef = Replace(strRef, &#34; &#34;, &#34;&#34;) strRef = Replace(strRef, &#34; &#34;, &#34;&#34;) With objRE .Pattern = strPattern &#39;&#39;検索パターンを設定 .IgnoreCase = True &#39;&#39;</description>
+    </item>
+    
+    <item>
+      <title>64BIT環境のエクセルでも32BIT環境でも同様にURLエンコード出来る</title>
+      <link>https://code.okanemochi.tk/2019/06/12/64bit%E7%92%B0%E5%A2%83%E3%81%AE%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%81%A7%E3%82%8232bit%E7%92%B0%E5%A2%83%E3%81%A7%E3%82%82%E5%90%8C%E6%A7%98%E3%81%ABurl%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC/</link>
+      <pubDate>Wed, 12 Jun 2019 11:21:09 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/64bit%E7%92%B0%E5%A2%83%E3%81%AE%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AB%E3%81%A7%E3%82%8232bit%E7%92%B0%E5%A2%83%E3%81%A7%E3%82%82%E5%90%8C%E6%A7%98%E3%81%ABurl%E3%82%A8%E3%83%B3%E3%82%B3%E3%83%BC/</guid>
+      <description>Public Function EncodeURL64(ByVal sWord As String) As String Dim d As Object Dim elm As Object sWord = Replace(sWord, &#34;\&#34;, &#34;\\&#34;) sWord = Replace(sWord, &#34;&#39;&#34;, &#34;\&#39;&#34;) Set d = CreateObject(&#34;htmlfile&#34;) Set elm = d.createElement(&#34;span&#34;) elm.setAttribute &#34;id&#34;, &#34;result&#34; d.appendChild elm d.parentWindow.execScript &#34;document.getElementById(&#39;result&#39;).innerText = encodeURIComponent(&#39;&#34; &amp; sWord &amp; &#34;&#39;);&#34;, &#34;JScript&#34; EncodeURL64 = elm.innerText End Function &amp;nbsp;</description>
+    </item>
+    
+    <item>
+      <title>A1形式からR1C1形式に変換する</title>
+      <link>https://code.okanemochi.tk/2019/06/12/a1%E5%BD%A2%E5%BC%8F%E3%81%8B%E3%82%89r1c1%E5%BD%A2%E5%BC%8F%E3%81%AB%E5%A4%89%E6%8F%9B%E3%81%99%E3%82%8B/</link>
+      <pubDate>Wed, 12 Jun 2019 11:20:17 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/a1%E5%BD%A2%E5%BC%8F%E3%81%8B%E3%82%89r1c1%E5%BD%A2%E5%BC%8F%E3%81%AB%E5%A4%89%E6%8F%9B%E3%81%99%E3%82%8B/</guid>
+      <description>Function A1toR1C1cell(ByVal Col As String) As Long A1toR1C1cell = ThisWorkbook.Sheets(&#34;Sheet1&#34;).Range(Col).Column End Function &amp;nbsp;</description>
+    </item>
+    
+    <item>
+      <title>文字列からURLのみを抜き出す</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E6%96%87%E5%AD%97%E5%88%97%E3%81%8B%E3%82%89url%E3%81%AE%E3%81%BF%E3%82%92%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99/</link>
+      <pubDate>Wed, 12 Jun 2019 11:16:21 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E6%96%87%E5%AD%97%E5%88%97%E3%81%8B%E3%82%89url%E3%81%AE%E3%81%BF%E3%82%92%E6%8A%9C%E3%81%8D%E5%87%BA%E3%81%99/</guid>
+      <description>&#39;VBScript.RegExpオブジェクトを使ってvbaで正規表現を使う。但し、(…)でグループ化した部分を参照する、RegExp.$n は</description>
+    </item>
+    
+    <item>
+      <title>指定シートの指定列の最終データ行を返す関数</title>
+      <link>https://code.okanemochi.tk/2019/06/12/%E6%8C%87%E5%AE%9A%E3%82%B7%E3%83%BC%E3%83%88%E3%81%AE%E6%8C%87%E5%AE%9A%E5%88%97%E3%81%AE%E6%9C%80%E7%B5%82%E3%83%87%E3%83%BC%E3%82%BF%E8%A1%8C%E3%82%92%E8%BF%94%E3%81%99%E9%96%A2%E6%95%B0/</link>
+      <pubDate>Wed, 12 Jun 2019 11:14:23 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2019/06/12/%E6%8C%87%E5%AE%9A%E3%82%B7%E3%83%BC%E3%83%88%E3%81%AE%E6%8C%87%E5%AE%9A%E5%88%97%E3%81%AE%E6%9C%80%E7%B5%82%E3%83%87%E3%83%BC%E3%82%BF%E8%A1%8C%E3%82%92%E8%BF%94%E3%81%99%E9%96%A2%E6%95%B0/</guid>
+      <description>&#39;****************************************************************************** &#39; &#39; 指定シートの指定列の最終データ行を返す関数 &#39; &#39;****************************************************************************** Public Function getLastRowNo(strSheetname, strCloumn,strRow) As Long With ActiveWorkbook.Worksheets(strSheetname) getLastRowNo = .Range(strCloumn &amp; strRow).End(xlDown).Row End With End Function &amp;nbsp;</description>
+    </item>
+    
+  </channel>
+</rss>

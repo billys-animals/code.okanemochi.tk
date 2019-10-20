@@ -1,0 +1,553 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    
+    
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>
+      
+  Contents &ndash; CODE SNIPET
+
+    </title>
+    
+    
+    <meta name="description" property="og:description" content="">
+    
+
+    <meta name="apple-mobile-web-app-title" content="CODE SNIPET">
+    
+    
+    
+    
+
+
+    <link rel="stylesheet" href="/assets/syntax.css">
+    <link rel="stylesheet" href="/assets/primer-build.css">
+    <link rel="stylesheet" href="/assets/style.css">
+  </head>
+
+
+  <body class="bg-gray">
+    <div id="holy" class="container-lg bg-white h-100">
+
+      <div id="header" class="px-1 bg-white">
+        <nav class="UnderlineNav UnderlineNav--right px-2">
+  <a class="UnderlineNav-actions muted-link h2" href="https://code.okanemochi.tk/">
+    CODE SNIPET
+  </a>
+
+  
+  
+  <div class="UnderlineNav-body">
+    
+    
+    <a class="UnderlineNav-item " href="/post/">
+      
+      <span>記事</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/tags/">
+      
+      <span>タグ</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/categories/">
+      
+      <span>カテゴリー</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/about/">
+      
+      <span>執筆者</span>
+    </a>
+    
+    
+    
+    <a class="UnderlineNav-item " href="/privacy-policy/">
+      
+      <span>ポリシー</span>
+    </a>
+    
+    
+  </div>
+  
+</nav>
+
+      </div>
+
+      <div role="main" id="main" class="holy-main markdown-body px-4 bg-white">
+        
+
+<div>
+
+  <h1>Contents</h1>
+  
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/03/08/29-dump%E3%81%A7%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%9B%B8%E3%81%8D%E3%81%A0%E3%81%9D%E3%81%86/">
+        <div class="h2 mt-1 mb-1">29 .dumpでデータを書きだそう</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/sqlite' class="muted-link">
+  <span class="Label Label--gray-darker">Sqlite</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-03-08</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    drop table if exists users; create table users ( id integer primary key, name ); insert into users (name) values ('a'); insert into users (name) values ('b'); insert into users (name) values ('c'); .output users.dump.sql .dump users PRAGMA foreign_keys=OFF; BEGIN TRANSACTION; CREATE TABLE users ( id integer primary key, name ); INSERT INTO "users" VALUES(1,'a'); INSERT INTO "users" VALUES(2,'b'); INSERT INTO "users" VALUES(3,'taguchi'); COMMIT; &nbsp;
+    <a class="muted-link" href="/2018/03/08/29-dump%E3%81%A7%E3%83%87%E3%83%BC%E3%82%BF%E3%82%92%E6%9B%B8%E3%81%8D%E3%81%A0%E3%81%9D%E3%81%86/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/03/08/30-csv%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E6%89%B1%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86/">
+        <div class="h2 mt-1 mb-1">30 csvファイルを扱ってみよう</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/sqlite' class="muted-link">
+  <span class="Label Label--gray-darker">Sqlite</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-03-08</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    drop table if exists users; create table users ( id integer primary key, name, score ); insert into users (name, score) values ('a', 10); insert into users (name, score) values ('b', 20); insert into users (name, score) values ('c', 30); create table temp (name, score); .mode csv -- .import users.csv users .import users.csv temp insert into users (name, score) select name, score from temp; select * from users; drop table
+    <a class="muted-link" href="/2018/03/08/30-csv%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E6%89%B1%E3%81%A3%E3%81%A6%E3%81%BF%E3%82%88%E3%81%86/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/28/amazon_pa_api_itemlockup/">
+        <div class="h2 mt-1 mb-1">AMAZON_PA_API_Itemlockup</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-28</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    /* Amazon PA API 関連のアカウント情報 */ var AWS_KEYS; var AWS_SCEC; var AWS_ASOSIEITO; var namespace_url = 'http://webservices.amazon.com/AWSECommerceService/2011-08-01'; /************************************/ var wait_time; var mSheet = SpreadsheetApp.getActiveSpreadsheet(); var sheet_setting = mSheet.getSheetByName("設定"); /********************************************************************* ** Amazon AWS API
+    <a class="muted-link" href="/2018/02/28/amazon_pa_api_itemlockup/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/28/bat%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/">
+        <div class="h2 mt-1 mb-1">BATファイル</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/dos' class="muted-link">
+  <span class="Label Label--gray-darker">DOS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-28</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    @echo off ::不要情報なしで拡張子CSVのファイル名を表示させファイルにリダイレクト dir *.csv /b &gt; csvfilename.txt ::上のファイルの内容（１行）を環境変数(CSVFI
+    <a class="muted-link" href="/2018/02/28/bat%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/28/worksheet%E5%8F%82%E7%85%A7api%E9%AB%98%E9%80%9F%E5%8C%96%E5%87%A6%E7%90%86%E3%83%99%E3%83%BC%E3%82%B9/">
+        <div class="h2 mt-1 mb-1">Worksheet参照API高速化処理ベース</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-28</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    //シート書き出し範囲を予め定義 var strSheetRange = "A2:Z10002"; var objNowRange = sheet1.getRange(strSheetRange); var varNowValues = objNowRange.getValues(); function func1(){ /* 何らかの処理*/ //セル参照変数に書き込む varNowValues[0][0]='test_word'; /* 何らかの処理*/ //配列に溜めた
+    <a class="muted-link" href="/2018/02/28/worksheet%E5%8F%82%E7%85%A7api%E9%AB%98%E9%80%9F%E5%8C%96%E5%87%A6%E7%90%86%E3%83%99%E3%83%BC%E3%82%B9/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+    
+    
+<div class="rounded-2 box-shadow-medium px-3 pb-2 pt-2 mb-3">
+  <div class="Subhead mb-2">
+    <div class="Subhead-heading">
+      <a href="/2018/02/27/ebay-api%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/">
+        <div class="h2 mt-1 mb-1">eBAY API呼び出しサンプル</div>
+      </a>
+    </div>
+    <div class="Subhead-description">
+      
+
+
+<a href='/categories/gas' class="muted-link">
+  <span class="Label Label--gray-darker">GAS</span>
+</a>
+
+
+
+
+      <div class="float-md-right">
+        <span>2018-02-27</span>
+      </div>
+    </div>
+  </div>
+  <div class="text-gray">
+    
+    var result3 = setEbayGetItemShippingRequest(ItemID); var response3 = UrlFetchApp.fetch(trading_url, options); var document3 = XmlService.parse(response3); var root3=document3.getRootElement(); var NS3=XmlService.getNamespace(namespace_url); var ShippingServiceOptions=root3.getChild('ShippingDetails',NS3).getChildren('ShippingServiceOptions', NS3); var col_num = 6; for(mm=0;mm&lt;=ShippingServiceOptions.length-1;mm++){ var ShippingService = ShippingServiceOptions[mm].getChild('ShippingService', NS3).getValue(); var ShippingServiceCost = ShippingServiceOptions[mm].getChild('ShippingServiceCost', NS3).getValue(); var ShippingServiceAdditionalCost = ShippingServiceOptions[mm].getChild('ShippingServiceAdditionalCost', NS3).getValue(); Write_Sheet_range[now_row_position][col_num]=ShippingService; Write_Sheet_range[now_row_position][col_num+1]=ShippingServiceCost; Write_Sheet_range[now_row_position][col_num+2]=ShippingServiceAdditionalCost; col_num += 3; } sheet_setting.getRange("E3").setValue(now_row_position); now_row_position=now_row_position+1; &nbsp;
+    <a class="muted-link" href="/2018/02/27/ebay-api%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/">…</a>
+  </div>
+</div>
+
+    
+
+
+<img src="">
+
+  
+
+  
+  
+
+<nav class="paginate-container">
+  <div class="pagination">
+    <ul>
+      
+      <a href="/content/page/9/" class="previous_page">Prev</a>
+      
+
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/content/">1</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/content/page/2/">2</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/content/page/3/">3</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/content/page/9/">9</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <em class="current selected" aria-current="true">10</em>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/content/page/11/">11</a>
+            
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            <span class="gap">…</span>
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+      
+          
+          
+          
+          
+              
+              
+          
+          
+            
+              <a href="/content/page/14/">14</a>
+            
+          
+      
+
+      
+      <a href="/content/page/11/" class="next_page">Next</a>
+      
+    </ul>
+  </div>
+</nav>
+
+
+
+
+</div>
+
+
+      </div>
+
+      <div id="side" class="pr-1 bg-white">
+        <aside class="pr-3">
+          
+  
+  
+<div class="Box Box--blue p-2 mb-3">
+<iframe src="https://rcm-fe.amazon-adsystem.com/e/cm?o=9&p=11&l=ur1&category=digital_software&f=ifr&linkID=f9a893361db665292b58fe0752366942&t=pasokon-news-22&tracking_id=pasokon-news-22" width="120" height="600" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+  </div>
+
+        </aside>
+      </div>
+
+      <div id="footer" class="pt-2 pb-3 bg-white text-center">
+        
+
+  <span class="text-small text-gray">
+    sphia &middot; 
+
+    Powered by the
+    <a href="https://github.com/qqhann/hugo-primer" class="link-gray-dark">Hugo-Primer</a> theme for
+    <a href="https://gohugo.io" class="link-gray-dark">Hugo</a>.
+  </span>
+
+
+      </div>
+    </div>
+
+
+    
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ['\\(','\\)']] } });</script>
+
+	<script type="text/javascript">
+	    amzn_assoc_ad_type = "link_enhancement_widget";
+	    amzn_assoc_tracking_id = "pasokon-news-22";
+	    amzn_assoc_linkid = "5d961039d13a5190e1ea2fb9081d0bd3";
+	    amzn_assoc_placement = "";
+	    amzn_assoc_marketplace = "amazon";
+	    amzn_assoc_region = "JP";
+	</script>
+	<script src="//ws-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&MarketPlace=JP"></script>
+
+  </body>
+</html>

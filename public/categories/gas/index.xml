@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GAS on CODE SNIPET</title>
+    <link>https://code.okanemochi.tk/categories/gas/</link>
+    <description>Recent content in GAS on CODE SNIPET</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ja</language>
+    <copyright>sphia</copyright>
+    <lastBuildDate>Mon, 26 Mar 2018 14:59:28 +0000</lastBuildDate>
+    
+	<atom:link href="https://code.okanemochi.tk/categories/gas/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>UrlFetchApp.fetch時のオプション値一覧</title>
+      <link>https://code.okanemochi.tk/2018/03/26/urlfetchapp-fetch%E6%99%82%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E5%80%A4%E4%B8%80%E8%A6%A7/</link>
+      <pubDate>Mon, 26 Mar 2018 14:59:28 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/03/26/urlfetchapp-fetch%E6%99%82%E3%81%AE%E3%82%AA%E3%83%97%E3%82%B7%E3%83%A7%E3%83%B3%E5%80%A4%E4%B8%80%E8%A6%A7/</guid>
+      <description>パラメーター 名 タイプ 説明 url String フェッチするURL params Object 以下に定義されている高度なパラメータを指定するオプションのJavaScriptオブジェクト</description>
+    </item>
+    
+    <item>
+      <title>Amazon MWS API FEED</title>
+      <link>https://code.okanemochi.tk/2018/03/26/amazon-mws-api-feed/</link>
+      <pubDate>Mon, 26 Mar 2018 14:47:15 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/03/26/amazon-mws-api-feed/</guid>
+      <description>//Feed用 var namespace3 = &#34;http://mws.amazonaws.com/doc/2009-01-01/&#34;; var namespace4=&#39;&#34;http://www.w3.org/2001/XMLSchema-instance&#34; xsi:noNamespaceSchemaLocation=&#34;amzn-envelope.xsd&#34;&#39;; /************************************************************************* SubmitFeed FeedType=_POST_INVENTORY_AVAILABILITY_DATA_ ＜＜トランザクショ＞＞ SubmitFeed 「リクエスト送信してFeedSubmissionIdを取得」 =&amp;gt;GetFee</description>
+    </item>
+    
+    <item>
+      <title>AmazonMWS API  Sample</title>
+      <link>https://code.okanemochi.tk/2018/03/21/amazonmws-api-sample/</link>
+      <pubDate>Wed, 21 Mar 2018 14:23:03 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/03/21/amazonmws-api-sample/</guid>
+      <description>var AWS_KEYS = &#34;AWSアクセスキーID&#34;; var AWS_SCEC = &#34;シークレットキー&#34;; var SellerId = &#34;セラーID&#34;; var mws_address = &#34;mws.amazonservices.jp&#34;; var namespace1 = &#34;http://mws.amazonservices.com/schema/Products/2011-10-01&#34;; var namespace2 = &#34;http://mws.amazonservices.com/schema/Products/2011-10-01/default.xsd&#34;; /************************************************************************* getAmazonMwsAPI ポイント１：ネームスペースU</description>
+    </item>
+    
+    <item>
+      <title>指定日時にトリガーを設定する</title>
+      <link>https://code.okanemochi.tk/2018/03/14/%E6%8C%87%E5%AE%9A%E6%97%A5%E6%99%82%E3%81%AB%E3%83%88%E3%83%AA%E3%82%AC%E3%83%BC%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B/</link>
+      <pubDate>Wed, 14 Mar 2018 04:27:22 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/03/14/%E6%8C%87%E5%AE%9A%E6%97%A5%E6%99%82%E3%81%AB%E3%83%88%E3%83%AA%E3%82%AC%E3%83%BC%E3%82%92%E8%A8%AD%E5%AE%9A%E3%81%99%E3%82%8B/</guid>
+      <description>function setTrigger() { // 2017年2月21日 7時30分に実行 var triggerDay = new Date(2016, (2 - 1), 21, 7, 30, 0, 0); ScriptApp.newTrigger(&#39;sendMail&#39;).timeBased().at(triggerDay).create(); } // 実行する関数 function sendMail() { // 自分へのメールの送信 var email = Session.getActiveUser().getEmail(); var subject = &#39;タイトル</description>
+    </item>
+    
+    <item>
+      <title>Chatwork APIによる指定場所への書き込み</title>
+      <link>https://code.okanemochi.tk/2018/03/13/chatwork-api%E3%81%AB%E3%82%88%E3%82%8B%E6%8C%87%E5%AE%9A%E5%A0%B4%E6%89%80%E3%81%B8%E3%81%AE%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF/</link>
+      <pubDate>Tue, 13 Mar 2018 07:43:10 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/03/13/chatwork-api%E3%81%AB%E3%82%88%E3%82%8B%E6%8C%87%E5%AE%9A%E5%A0%B4%E6%89%80%E3%81%B8%E3%81%AE%E6%9B%B8%E3%81%8D%E8%BE%BC%E3%81%BF/</guid>
+      <description>// チャットワークAPIのAPIトークン var api_token = &#39;3753f44d403a211b48b274c9a9234781&#39;; // 送信先のチャットのID var room_id = 0000000; //メール送信先のアドレス var toEmail = &#34;raku2do@live.jp&#34;; //チャットワーク＆メールの</description>
+    </item>
+    
+    <item>
+      <title>AMAZON_PA_API_Itemlockup</title>
+      <link>https://code.okanemochi.tk/2018/02/28/amazon_pa_api_itemlockup/</link>
+      <pubDate>Wed, 28 Feb 2018 07:07:04 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/28/amazon_pa_api_itemlockup/</guid>
+      <description>/* Amazon PA API 関連のアカウント情報 */ var AWS_KEYS; var AWS_SCEC; var AWS_ASOSIEITO; var namespace_url = &#39;http://webservices.amazon.com/AWSECommerceService/2011-08-01&#39;; /************************************/ var wait_time; var mSheet = SpreadsheetApp.getActiveSpreadsheet(); var sheet_setting = mSheet.getSheetByName(&#34;設定&#34;); /********************************************************************* ** Amazon AWS API</description>
+    </item>
+    
+    <item>
+      <title>Worksheet参照API高速化処理ベース</title>
+      <link>https://code.okanemochi.tk/2018/02/28/worksheet%E5%8F%82%E7%85%A7api%E9%AB%98%E9%80%9F%E5%8C%96%E5%87%A6%E7%90%86%E3%83%99%E3%83%BC%E3%82%B9/</link>
+      <pubDate>Wed, 28 Feb 2018 01:31:20 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/28/worksheet%E5%8F%82%E7%85%A7api%E9%AB%98%E9%80%9F%E5%8C%96%E5%87%A6%E7%90%86%E3%83%99%E3%83%BC%E3%82%B9/</guid>
+      <description>//シート書き出し範囲を予め定義 var strSheetRange = &#34;A2:Z10002&#34;; var objNowRange = sheet1.getRange(strSheetRange); var varNowValues = objNowRange.getValues(); function func1(){ /* 何らかの処理*/ //セル参照変数に書き込む varNowValues[0][0]=&#39;test_word&#39;; /* 何らかの処理*/ //配列に溜めた</description>
+    </item>
+    
+    <item>
+      <title>eBAY API呼び出しサンプル</title>
+      <link>https://code.okanemochi.tk/2018/02/27/ebay-api%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/</link>
+      <pubDate>Tue, 27 Feb 2018 05:01:03 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/ebay-api%E5%91%BC%E3%81%B3%E5%87%BA%E3%81%97%E3%82%B5%E3%83%B3%E3%83%97%E3%83%AB/</guid>
+      <description>var result3 = setEbayGetItemShippingRequest(ItemID); var response3 = UrlFetchApp.fetch(trading_url, options); var document3 = XmlService.parse(response3); var root3=document3.getRootElement(); var NS3=XmlService.getNamespace(namespace_url); var ShippingServiceOptions=root3.getChild(&#39;ShippingDetails&#39;,NS3).getChildren(&#39;ShippingServiceOptions&#39;, NS3); var col_num = 6; for(mm=0;mm&amp;lt;=ShippingServiceOptions.length-1;mm++){ var ShippingService = ShippingServiceOptions[mm].getChild(&#39;ShippingService&#39;, NS3).getValue(); var ShippingServiceCost = ShippingServiceOptions[mm].getChild(&#39;ShippingServiceCost&#39;, NS3).getValue(); var ShippingServiceAdditionalCost = ShippingServiceOptions[mm].getChild(&#39;ShippingServiceAdditionalCost&#39;, NS3).getValue(); Write_Sheet_range[now_row_position][col_num]=ShippingService; Write_Sheet_range[now_row_position][col_num+1]=ShippingServiceCost; Write_Sheet_range[now_row_position][col_num+2]=ShippingServiceAdditionalCost; col_num += 3; } sheet_setting.getRange(&#34;E3&#34;).setValue(now_row_position); now_row_position=now_row_position+1; &amp;nbsp;</description>
+    </item>
+    
+    <item>
+      <title>現在の日付を所定の書式で返す</title>
+      <link>https://code.okanemochi.tk/2018/02/27/%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E4%BB%98%E3%82%92%E6%89%80%E5%AE%9A%E3%81%AE%E6%9B%B8%E5%BC%8F%E3%81%A7%E8%BF%94%E3%81%99/</link>
+      <pubDate>Tue, 27 Feb 2018 04:57:55 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/%E7%8F%BE%E5%9C%A8%E3%81%AE%E6%97%A5%E4%BB%98%E3%82%92%E6%89%80%E5%AE%9A%E3%81%AE%E6%9B%B8%E5%BC%8F%E3%81%A7%E8%BF%94%E3%81%99/</guid>
+      <description>/********************************************************************* ** 現在の日付を所定の書式で返す *********************************************************************/ function getEbayDateTo(){ var now = new Date(); var y = now.getFullYear(); var m = now.getMonth() + 1; var d = now.getDate(); if (m &amp;lt; 10) { m = &#39;0&#39; + m; } if (d &amp;lt; 10) { d = &#39;0&#39; + d; } var new_date = y + &#39;-&#39; + m + &#39;-&#39;</description>
+    </item>
+    
+    <item>
+      <title>過去利用の正規表現集</title>
+      <link>https://code.okanemochi.tk/2018/02/27/%E9%81%8E%E5%8E%BB%E5%88%A9%E7%94%A8%E3%81%AE%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE%E9%9B%86/</link>
+      <pubDate>Tue, 27 Feb 2018 04:57:30 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/%E9%81%8E%E5%8E%BB%E5%88%A9%E7%94%A8%E3%81%AE%E6%AD%A3%E8%A6%8F%E8%A1%A8%E7%8F%BE%E9%9B%86/</guid>
+      <description>var myRegexp = /&amp;lt;h3 class=\&#34;lvtitle\&#34;&amp;gt;([\s\S]*?)&amp;lt;\/h3&amp;gt;/gi; //eBAYのItemIDを抜き出す正規表現 var myRegexp = /\/([0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9])\?hash/gi; //eBay側で小細工している様でこの処理が必要 temp_iteid=temp_iteid.replace(&#39;&amp;lt;h3class=&#34;lvtitle&#34;&amp;gt;&amp;lt;ahref=&#34;https://www.ebay.com/itm/&#39;,&#34;&#34;); &amp;nbsp;</description>
+    </item>
+    
+    <item>
+      <title>文字列から指定の文字と文字で囲まれた部分を切り出す</title>
+      <link>https://code.okanemochi.tk/2018/02/27/%E6%96%87%E5%AD%97%E5%88%97%E3%81%8B%E3%82%89%E6%8C%87%E5%AE%9A%E3%81%AE%E6%96%87%E5%AD%97%E3%81%A8%E6%96%87%E5%AD%97%E3%81%A7%E5%9B%B2%E3%81%BE%E3%82%8C%E3%81%9F%E9%83%A8%E5%88%86%E3%82%92%E5%88%87/</link>
+      <pubDate>Tue, 27 Feb 2018 04:53:13 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/%E6%96%87%E5%AD%97%E5%88%97%E3%81%8B%E3%82%89%E6%8C%87%E5%AE%9A%E3%81%AE%E6%96%87%E5%AD%97%E3%81%A8%E6%96%87%E5%AD%97%E3%81%A7%E5%9B%B2%E3%81%BE%E3%82%8C%E3%81%9F%E9%83%A8%E5%88%86%E3%82%92%E5%88%87/</guid>
+      <description>/********************************************************* 文字列から指定の文字と文字で囲まれた部分を切り出す *********************************************************/ function getStringSlice(content, startStr, endStr){ var indexStart = content.indexOf(startStr); if(indexStart == -1){ return &#34;&#34;; } else { indexStart += startStr.length return content.slice(indexStart, content.indexOf(endStr, indexStart)); } } &amp;nbsp;</description>
+    </item>
+    
+    <item>
+      <title>各種API等のNamespace等</title>
+      <link>https://code.okanemochi.tk/2018/02/27/%E5%90%84%E7%A8%AEapi%E7%AD%89%E3%81%AEnamespace%E7%AD%89/</link>
+      <pubDate>Tue, 27 Feb 2018 04:51:03 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/%E5%90%84%E7%A8%AEapi%E7%AD%89%E3%81%AEnamespace%E7%AD%89/</guid>
+      <description>var trading_url = &#34;https://api.ebay.com/ws/api.dll&#34;; var shopping_url = &#34;http://open.api.ebay.com/shopping&#34;; var namespace_url = &#34;urn:ebay:apis:eBLBaseComponents&#34;; var sclyping_base =&#34;https://www.ebay.com/sch/&#34;; var sclyping_sub =&#34;/m.html&#34;; var sclyping_loop = &#34;https://www.ebay.com/sch/m.html?_ssn=UserID&amp;_pgn=PAGE&amp;_skc=START&amp;rt=nc&#34;; &amp;nbsp;</description>
+    </item>
+    
+    <item>
+      <title>eBAY API setEbayGetSellerEvents</title>
+      <link>https://code.okanemochi.tk/2018/02/27/ebay-api-setebaygetsellerevents/</link>
+      <pubDate>Tue, 27 Feb 2018 04:49:27 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/ebay-api-setebaygetsellerevents/</guid>
+      <description>/********************************************************* GetSellerEvents APIへの接続情報を作成する関数 *********************************************************/ function setEbayGetSellerEvents(){ call_name = &#34;GetSellerEvents&#34;; xml=&#39;&amp;lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&amp;gt;\ &amp;lt;GetSellerEventsRequest xmlns=&#34;urn:ebay:apis:eBLBaseComponents&#34;&amp;gt;\ &amp;lt;RequesterCredentials&amp;gt;\ &amp;lt;eBayAuthToken&amp;gt;&#39; + token + &#39;&amp;lt;/eBayAuthToken&amp;gt;\ &amp;lt;/RequesterCredentials&amp;gt;\ &amp;lt;StartTimeFrom&amp;gt;&#39; + strFrom + &#39;&amp;lt;/StartTimeFrom&amp;gt;\ &amp;lt;StartTimeTo&amp;gt;&#39; + strTo + &#39;&amp;lt;/StartTimeTo&amp;gt;\ &amp;lt;UserID&amp;gt;&#39; + seller_id + &#39;&amp;lt;/UserID&amp;gt;\ &amp;lt;OutputSelector&amp;gt;ItemID,ListingStatus&amp;lt;/OutputSelector&amp;gt;\ &amp;lt;DetailLevel&amp;gt;ReturnAll&amp;lt;/DetailLevel&amp;gt;\ &amp;lt;/GetSellerEventsRequest&amp;gt;&#39;; headers = { &#39;Content-Type&#39;: &#39; text/xml;charset=UTF-8&#39;, &#39;X-EBAY-API-CERT-NAME&#39; : cer_id, &#39;X-EBAY-API-DEV-NAME&#39; : dev_id, &#39;X-EBAY-API-SITEID&#39; : site_id, &#39;X-EBAY-API-CALL-NAME&#39;</description>
+    </item>
+    
+    <item>
+      <title>eBAY API setEbayGetSingleItem</title>
+      <link>https://code.okanemochi.tk/2018/02/27/ebay-api-2/</link>
+      <pubDate>Tue, 27 Feb 2018 04:48:23 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/ebay-api-2/</guid>
+      <description>/********************************************************* GetSingleItem APIへの接続情報を作成する関数 *********************************************************/ function setEbayGetSingleItem(ItemID){ call_name = &#34;GetSingleItem&#34;; xml = &#39;&amp;lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&amp;gt; \ &amp;lt;GetSingleItemRequest xmlns=&#34;urn:ebay:apis:eBLBaseComponents&#34;&amp;gt; \ &amp;lt;ItemID&amp;gt;&#39; + ItemID + &#39;&amp;lt;/ItemID&amp;gt; \ &amp;lt;IncludeSelector&amp;gt;ItemSpecifics&amp;lt;/IncludeSelector&amp;gt; \ &amp;lt;/GetSingleItemRequest&amp;gt;&#39;; headers = { &#39;Content-Type&#39;: &#39;text/xml&#39;, &#39;X-EBAY-API-CALL-NAME&#39; : call_name, &#39;X-EBAY-API-SITEID&#39; : site_id, &#39;X-EBAY-API-VERSION&#39; : &#39;809&#39;, &#39;X-EBAY-API-REQUEST-ENCODING&#39; : &#39;xml&#39;, &#39;X-EBAY-API-APP-NAME&#39; : app_id }; options = { method: &#39;POST&#39;, muteHttpExceptions :</description>
+    </item>
+    
+    <item>
+      <title>eBAY API setEbayGetItemShippingRequest</title>
+      <link>https://code.okanemochi.tk/2018/02/27/ebay-api/</link>
+      <pubDate>Tue, 27 Feb 2018 04:47:22 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/ebay-api/</guid>
+      <description>/********************************************************* GetItemShipping APIへの接続情報を作成する関数 *********************************************************/ function setEbayGetItemShippingRequest(ItemID){ call_name = &#34;GetItemShipping&#34;; xml = &#39;&amp;lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&amp;gt; \ &amp;lt;GetItemShippingRequest xmlns=&#34;urn:ebay:apis:eBLBaseComponents&#34;&amp;gt; \ &amp;lt;RequesterCredentials&amp;gt; \ &amp;lt;eBayAuthToken&amp;gt;&#39; + token + &#39;&amp;lt;/eBayAuthToken&amp;gt; \ &amp;lt;/RequesterCredentials&amp;gt; \ &amp;lt;Version&amp;gt;793&amp;lt;/Version&amp;gt; \ &amp;lt;ItemID&amp;gt;&#39; + ItemID + &#39;&amp;lt;/ItemID&amp;gt; \ &amp;lt;QuantitySold&amp;gt;1&amp;lt;/QuantitySold&amp;gt; \ &amp;lt;DestinationPostalCode&amp;gt;40404&amp;lt;/DestinationPostalCode&amp;gt; \ &amp;lt;DestinationCountryCode&amp;gt;US&amp;lt;/DestinationCountryCode&amp;gt; \ &amp;lt;ShippingInsuranceCost&amp;gt;US&amp;lt;/ShippingInsuranceCost&amp;gt; \ &amp;lt;ShippingServiceAdditionalCost &amp;gt;US&amp;lt;/ShippingServiceAdditionalCost&amp;gt; \ &amp;lt;/GetItemShippingRequest&amp;gt;&#39;; headers = { &#39;Content-Type&#39;: &#39;text/xml&#39;, &#39;X-EBAY-API-CERT-NAME&#39; :</description>
+    </item>
+    
+    <item>
+      <title>eBAY API GetSellerList APIへの接続情報を作成する関数</title>
+      <link>https://code.okanemochi.tk/2018/02/27/ebay-api-getsellerlist-api%E3%81%B8%E3%81%AE%E6%8E%A5%E7%B6%9A%E6%83%85%E5%A0%B1%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E9%96%A2%E6%95%B0/</link>
+      <pubDate>Tue, 27 Feb 2018 04:45:53 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/ebay-api-getsellerlist-api%E3%81%B8%E3%81%AE%E6%8E%A5%E7%B6%9A%E6%83%85%E5%A0%B1%E3%82%92%E4%BD%9C%E6%88%90%E3%81%99%E3%82%8B%E9%96%A2%E6%95%B0/</guid>
+      <description>/********************************************************* GetSellerList APIへの接続情報を作成する関数 *********************************************************/ function setEbayGetSellerList(){ xml = &#39;&amp;lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&amp;gt;\ &amp;lt;GetSellerListRequest xmlns=&#34;urn:ebay:apis:eBLBaseComponents&#34;&amp;gt;\ &amp;lt;RequesterCredentials&amp;gt;\ &amp;lt;eBayAuthToken&amp;gt;&#39; + token + &#39;&amp;lt;/eBayAuthToken&amp;gt;\ &amp;lt;/RequesterCredentials&amp;gt;\ &amp;lt;ErrorLanguage&amp;gt;en_US&amp;lt;/ErrorLanguage&amp;gt;\ &amp;lt;WarningLevel&amp;gt;High&amp;lt;/WarningLevel&amp;gt;\ &amp;lt;GranularityLevel&amp;gt;Coarse&amp;lt;/GranularityLevel&amp;gt;\ &amp;lt;StartTimeFrom&amp;gt;&#39; + getEbayDateFrom() + &#39;&amp;lt;/StartTimeFrom&amp;gt;\ &amp;lt;StartTimeTo&amp;gt;&#39; + getEbayDateTo() + &#39;&amp;lt;/StartTimeTo&amp;gt;\ &amp;lt;UserID&amp;gt;&#39; + seller_id + &#39;&amp;lt;/UserID&amp;gt;\ &amp;lt;IncludeWatchCount&amp;gt;true&amp;lt;/IncludeWatchCount&amp;gt;\ &amp;lt;Pagination&amp;gt;\ &amp;lt;EntriesPerPage&amp;gt;&#39; + String(getcount) + &#39;&amp;lt;/EntriesPerPage&amp;gt;\ &amp;lt;PageNumber&amp;gt;&#39; + getpageno + &#39;&amp;lt;/PageNumber&amp;gt;\ &amp;lt;/Pagination&amp;gt;\ &amp;lt;/GetSellerListRequest&amp;gt;&#39;; headers = {</description>
+    </item>
+    
+    <item>
+      <title>XML_to_JSON</title>
+      <link>https://code.okanemochi.tk/2018/02/27/xml_to_json/</link>
+      <pubDate>Tue, 27 Feb 2018 04:35:29 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/xml_to_json/</guid>
+      <description>/** * Converts an XML string to a JSON object, using logic similar to the * sunset method Xml.parse(). * @param {string} xml The XML to parse. * @returns {Object} The parsed XML. */ function XML_to_JSON(xml) { var doc = XmlService.parse(xml); var result = {}; var root = doc.getRootElement(); result[root.getName()] = elementToJSON(root); return result; } /** * Converts an XmlService element to a JSON object, using logic similar to * the sunset method Xml.</description>
+    </item>
+    
+    <item>
+      <title>Gmailのメール情報をキーワード指定で取得する</title>
+      <link>https://code.okanemochi.tk/2018/02/27/gmail%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E6%83%85%E5%A0%B1%E3%82%92%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8C%87%E5%AE%9A%E3%81%A7%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</link>
+      <pubDate>Tue, 27 Feb 2018 04:29:47 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/gmail%E3%81%AE%E3%83%A1%E3%83%BC%E3%83%AB%E6%83%85%E5%A0%B1%E3%82%92%E3%82%AD%E3%83%BC%E3%83%AF%E3%83%BC%E3%83%89%E6%8C%87%E5%AE%9A%E3%81%A7%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
+      <description>function getMail() { keyword = &#39;label:エントリ&#39;; var threads = GmailApp.search(keyword); var mailCount = threads.length; var row = 0; for(var n in threads){ var thd = threads[n]; var msgs = thd.getMessages(); for(m in msgs){ var b_date = msgs[m].getDate(); var b_title = msgs[m].getSubject(); var b_from = msgs[m].getFrom(); var b_uniqeId = msgs[m].getId(); var b_body = msgs[m].getBody(); var b_text = msgs[m].getPlainBody(); }</description>
+    </item>
+    
+    <item>
+      <title>指定文字列の空白や改行を空文字に置換する(Trim)</title>
+      <link>https://code.okanemochi.tk/2018/02/27/%E6%8C%87%E5%AE%9A%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E7%A9%BA%E7%99%BD%E3%82%84%E6%94%B9%E8%A1%8C%E3%82%92%E7%A9%BA%E6%96%87%E5%AD%97%E3%81%AB%E7%BD%AE%E6%8F%9B%E3%81%99%E3%82%8Btrim/</link>
+      <pubDate>Tue, 27 Feb 2018 04:18:27 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/%E6%8C%87%E5%AE%9A%E6%96%87%E5%AD%97%E5%88%97%E3%81%AE%E7%A9%BA%E7%99%BD%E3%82%84%E6%94%B9%E8%A1%8C%E3%82%92%E7%A9%BA%E6%96%87%E5%AD%97%E3%81%AB%E7%BD%AE%E6%8F%9B%E3%81%99%E3%82%8Btrim/</guid>
+      <description>/************************************************************************************ 【関数概要】trim_ 【引数】target 【戻り値】targetの含まれる文字列中の空白を除去した形で呼び出し元に返す ***********************************************************************************/ function trim_(target){ if (target == null || target ==</description>
+    </item>
+    
+    <item>
+      <title>指定フォルダのフォルダIDを取得する　/　子フォルダを作成する</title>
+      <link>https://code.okanemochi.tk/2018/02/27/%E6%8C%87%E5%AE%9A%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AE%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80id%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</link>
+      <pubDate>Tue, 27 Feb 2018 04:14:48 +0000</pubDate>
+      
+      <guid>https://code.okanemochi.tk/2018/02/27/%E6%8C%87%E5%AE%9A%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80%E3%81%AE%E3%83%95%E3%82%A9%E3%83%AB%E3%83%80id%E3%82%92%E5%8F%96%E5%BE%97%E3%81%99%E3%82%8B/</guid>
+      <description>//画像保存フォルダへの参照を得る var BASE_FOLDER = &#34;images&#34;; all_folders = DriveApp.getFolders(); while ( all_folders.hasNext() ){ var folder = all_folders.next(); if ( folder.getName() == BASE_FOLDER ){ //imagesのフォルダIDを取得 TOP_FOLDER = DriveApp.getFolderById(folder.getId()); } } /********************************************************************* ** 指定した2階層</description>
+    </item>
+    
+  </channel>
+</rss>
