@@ -3,19 +3,7 @@ title: getAmazonAPI_ItemLookup（戻りは.getContentText()）
 author: pg1965
 type: post
 date: 2018-02-27T03:43:07+00:00
-url: /2018/02/27/getamazonapi_itemlookup（戻りは-getcontenttext）/
-page_layout:
-  - def
-sub:
-  - def
-side:
-  - def
-index:
-  - index
-follow:
-  - follow
-pvc_views:
-  - 1
+url: /2018/02/27/getamazonapi_itemlookup/
 categories:
   - GAS
 
