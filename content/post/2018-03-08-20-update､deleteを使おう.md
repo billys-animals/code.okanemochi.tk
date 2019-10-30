@@ -4,23 +4,12 @@ author: pg1965
 type: post
 date: 2018-03-08T06:08:47+00:00
 url: /2018/03/08/20-update､deleteを使おう/
-page_layout:
-  - def
-sub:
-  - def
-side:
-  - def
-index:
-  - index
-follow:
-  - follow
-pvc_views:
-  - 1
 categories:
   - Sqlite
 
 ---
-<pre class="lang:tsql decode:true ">drop table if exists users;
+```tsql
+drop table if exists users;
 CREATE table users (
   id integer primary key,
   name text,
@@ -43,6 +32,5 @@ select * from users;
 -- delete
 -- delete from users;
 delete from users where score = 0;
-select * from users;</pre>
-
-&nbsp;
+select * from users;
+```
