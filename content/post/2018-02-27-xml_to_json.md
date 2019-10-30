@@ -4,23 +4,12 @@ author: pg1965
 type: post
 date: 2018-02-27T04:35:29+00:00
 url: /2018/02/27/xml_to_json/
-page_layout:
-  - def
-sub:
-  - def
-side:
-  - def
-index:
-  - index
-follow:
-  - follow
-pvc_views:
-  - 1
 categories:
   - GAS
 
 ---
-<pre class="lang:js decode:true " title="XML_to_JSON">/**
+```js
+/**
  * Converts an XML string to a JSON object, using logic similar to the
  * sunset method Xml.parse().
  * @param {string} xml The XML to parse.
@@ -64,6 +53,5 @@ function elementToJSON(element) {
     result['Text'] = element.getText();
   }
   return result;
-}</pre>
-
-&nbsp;
+}
+```
