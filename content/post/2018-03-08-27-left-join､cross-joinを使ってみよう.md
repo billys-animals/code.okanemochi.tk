@@ -4,23 +4,12 @@ author: pg1965
 type: post
 date: 2018-03-08T06:01:55+00:00
 url: /2018/03/08/27-left-join､cross-joinを使ってみよう/
-page_layout:
-  - def
-sub:
-  - def
-side:
-  - def
-index:
-  - index
-follow:
-  - follow
-pvc_views:
-  - 2
 categories:
   - Sqlite
 
 ---
-<pre class="lang:tsql decode:true ">drop table if exists posts;
+```tsql
+drop table if exists posts;
 CREATE table posts (
   id integer primary key,
   title text,
@@ -59,6 +48,5 @@ insert into comments (id, post_id, comment) values (2, 1, 'c2');
 -- select posts.id, title, comment from posts left join comments on posts.id = comments.post_id;
 
 -- 交差結合
-select posts.id, title, comment from posts cross join comments;</pre>
-
-&nbsp;
+select posts.id, title, comment from posts cross join comments;
+```
