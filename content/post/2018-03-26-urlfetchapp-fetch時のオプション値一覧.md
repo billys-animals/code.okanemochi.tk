@@ -4,18 +4,6 @@ author: pg1965
 type: post
 date: 2018-03-26T14:59:28+00:00
 url: /2018/03/26/urlfetchapp-fetch時のオプション値一覧/
-page_layout:
-  - def
-sub:
-  - def
-side:
-  - def
-index:
-  - index
-follow:
-  - follow
-pvc_views:
-  - 1
 categories:
   - GAS
 
