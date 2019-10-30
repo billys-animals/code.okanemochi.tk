@@ -4,23 +4,12 @@ author: pg1965
 type: post
 date: 2018-02-27T04:49:27+00:00
 url: /2018/02/27/ebay-api-setebaygetsellerevents/
-page_layout:
-  - def
-sub:
-  - def
-side:
-  - def
-index:
-  - index
-follow:
-  - follow
-pvc_views:
-  - 1
 categories:
   - GAS
 
 ---
-<pre class="lang:js decode:true " title="setEbayGetSellerEvents">/*********************************************************
+```js
+/*********************************************************
  GetSellerEvents APIへの接続情報を作成する関数
 *********************************************************/
 function setEbayGetSellerEvents(){
@@ -60,6 +49,4 @@ function setEbayGetSellerEvents(){
         payload: xml
     };
 }
-</pre>
-
-&nbsp;
+```
