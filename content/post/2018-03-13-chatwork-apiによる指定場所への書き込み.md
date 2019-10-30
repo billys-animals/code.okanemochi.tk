@@ -4,23 +4,12 @@ author: pg1965
 type: post
 date: 2018-03-13T07:43:10+00:00
 url: /2018/03/13/chatwork-apiによる指定場所への書き込み/
-page_layout:
-  - def
-sub:
-  - def
-side:
-  - def
-index:
-  - index
-follow:
-  - follow
-pvc_views:
-  - 1
 categories:
   - GAS
 
 ---
-<pre class="lang:js decode:true  " title="chatwork_api.gs">// チャットワークAPIのAPIトークン
+```js
+// チャットワークAPIのAPIトークン
 var api_token = '3753f44d403a211b48b274c9a9234781';
 
 // 送信先のチャットのID
@@ -76,6 +65,4 @@ function sendMailForm() {
 function testmail() {
     MailApp.sendEmail("raku2do@yahoo.co.jp", "テスト", "yahooに送るテスト");
 }
-</pre>
-
-&nbsp;
+```
