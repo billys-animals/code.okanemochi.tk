@@ -8,7 +8,8 @@ categories:
   - GAS
 
 ---
-<pre class="lang:js decode:true  " title="Amazon API 呼び出し時のItemlockupResponse対策">//リクエストを発行する
+```js
+//リクエストを発行する
 var ResultText = getAmazonAPI_ItemLookup(strASIN);
 //戻り値の中に「ItemlockupResponse」も文字列があるか否か判定
 //（　0:なし,1:あり　）
@@ -43,11 +44,11 @@ var a = xx.getDescendants();</pre>
      return 0;
   }
 }
-</pre>
+```
 
-&nbsp;
 
-<pre class="lang:js decode:true" title="getAmazonAPI_ItemLookup">/*************************************************************************
+```js
+/*************************************************************************
 getAmazonAPI_ItemLookup
 //ResponseGroup:"ItemAttributes,SalesRank,OfferSummary,Offers,ItemIds"
 アマゾンAWS APIを呼び出し結果を呼び出し元に返す
@@ -80,9 +81,10 @@ function getAmazonAPI_ItemLookup(isbn){
   var r = UrlFetchApp.fetch(z,{ muteHttpExceptions:true });
   return r.getContentText();
 }
-</pre>
+```
 
-<pre class="lang:js decode:true " title="setAwsData">/*********************************************************************
+```js
+/*********************************************************************
 **  Amazon AWS API利用に必要なパラメーターを読み込む
 *********************************************************************/
 function setAwsData(){
@@ -94,6 +96,4 @@ function setAwsData(){
   
   wait_time= Number(sheet_setting.getRange("B9").getValue())*1000;
 }
-</pre>
-
-&nbsp;
+```
