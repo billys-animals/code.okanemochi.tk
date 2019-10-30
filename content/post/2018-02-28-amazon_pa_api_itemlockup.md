@@ -4,23 +4,12 @@ author: pg1965
 type: post
 date: 2018-02-28T07:07:04+00:00
 url: /2018/02/28/amazon_pa_api_itemlockup/
-page_layout:
-  - col1
-sub:
-  - def
-side:
-  - def
-index:
-  - index
-follow:
-  - follow
-pvc_views:
-  - 3
 categories:
   - GAS
 
 ---
-<pre class="lang:js decode:true " title="amazon_pa_api_itemkockup">/*　Amazon PA API 関連のアカウント情報  */
+```js
+/*　Amazon PA API 関連のアカウント情報  */
 var AWS_KEYS;
 var AWS_SCEC;
 var AWS_ASOSIEITO;
@@ -248,6 +237,5 @@ function trim_(target){
     return "";
   }
   return target.replace(/(^\s+)|(\s+$)/g, "");
-}</pre>
-
-&nbsp;
+}
+```
