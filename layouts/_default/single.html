@@ -32,9 +32,11 @@
   <!-- Content -->
   <section class="pb-6 mb-3 border-bottom">
     {{ .Content }}
+     {{ partial "prev-next" . }}
+    
   </section>
   
-  {{ partial "prev-next" . }}
+ 
   
 </article>
 
