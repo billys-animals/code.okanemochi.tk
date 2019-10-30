@@ -4,23 +4,12 @@ author: pg1965
 type: post
 date: 2018-03-21T14:23:03+00:00
 url: /2018/03/21/amazonmws-api-sample/
-page_layout:
-  - def
-sub:
-  - def
-side:
-  - def
-index:
-  - index
-follow:
-  - follow
-pvc_views:
-  - 1
 categories:
   - GAS
 
 ---
-<pre class="lang:js decode:true  ">var AWS_KEYS = "AWSアクセスキーID";
+```js
+var AWS_KEYS = "AWSアクセスキーID";
 var AWS_SCEC = "シークレットキー";
 var SellerId = "セラーID";
 var mws_address = "mws.amazonservices.jp";
@@ -82,6 +71,4 @@ function getAmazonMwsAPI(isbn) {
 
     return 0;
 }
-</pre>
-
-&nbsp;
+```
