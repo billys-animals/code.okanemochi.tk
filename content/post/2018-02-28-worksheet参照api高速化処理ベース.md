@@ -4,23 +4,12 @@ author: pg1965
 type: post
 date: 2018-02-28T01:31:20+00:00
 url: /2018/02/28/worksheet参照api高速化処理ベース/
-page_layout:
-  - def
-sub:
-  - def
-side:
-  - def
-index:
-  - index
-follow:
-  - follow
-pvc_views:
-  - 2
 categories:
   - GAS
 
 ---
-<pre class="lang:js decode:true ">//シート書き出し範囲を予め定義
+```js
+//シート書き出し範囲を予め定義
 var strSheetRange = "A2:Z10002";
 var objNowRange = sheet1.getRange(strSheetRange);
 var varNowValues = objNowRange.getValues();
@@ -36,6 +25,5 @@ function func1(){
  
  //配列に溜めたデータをセルに書き出す
  objNowRange.setValues(varNowValues);
-}</pre>
-
-&nbsp;
+}
+```
