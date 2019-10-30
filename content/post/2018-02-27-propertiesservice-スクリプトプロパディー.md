@@ -4,23 +4,12 @@ author: pg1965
 type: post
 date: 2018-02-27T03:37:18+00:00
 url: /2018/02/27/propertiesservice-スクリプトプロパディー/
-page_layout:
-  - def
-sub:
-  - def
-side:
-  - def
-index:
-  - index
-follow:
-  - follow
-pvc_views:
-  - 1
 categories:
   - GAS
 
 ---
-<pre class="lang:js decode:true">var dp = PropertiesService.getScriptProperties();
+```js
+var dp = PropertiesService.getScriptProperties();
 dp.setProperty(strKey, strValue);
 </pre>
 
@@ -42,6 +31,4 @@ for(i=2;i&lt;=lastRows;i++){
 function setRowRelationAsinDelete(){
     dp.deleteAllProperties();
 }
-</pre>
-
-&nbsp;
+```
