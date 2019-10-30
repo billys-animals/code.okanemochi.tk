@@ -1,0 +1,293 @@
+/* custom css here */
+:root {
+  /* スフィア        */
+  --charno1 : url('https://sumaho.tk/wp-content/uploads/2019/07/d79fb14872b28fd45f2eede558f64caf-300x300.jpg');
+  /* リンク          */
+  --charno2 : url('https://sumaho.tk/wp-content/uploads/2018/06/line_1529897296323-150x150.jpg');
+  /* ナッキー        */
+  --charno3 : url('https://sumaho.tk/wp-content/uploads/2018/06/nacky1-150x150.jpg');
+  /* よしこ先生      */
+  --charno4 : url('https://sumaho.tk/wp-content/uploads/2018/07/59f22304d8a98fda3cdd7ae77db8a0b3.jpg');
+  /* 500円           */
+  --charno5 : url('https://sumaho.tk/wp-content/uploads/2018/07/0ac84bd4db08be2aec828256636a5af6.jpg');
+  /* コーヒーマスター */
+  --charno6 : url('https://sumaho.tk/wp-content/uploads/2018/07/aa5fb71af70bf729ec4214aa3a663453.jpg'); 
+  /* 宇宙人           */
+  --charno7 : url('https://sumaho.tk/wp-content/uploads/2018/07/illustrain10-bennkyou10-300x300.png');
+  /* 朱紺色えんぴつ   */
+  --charno8 : url('https://sumaho.tk/wp-content/uploads/2018/08/illustrain09-utyuu1-300x300.png');
+  /* 健康じいさん     */
+  --charno9 : url('https://sumaho.tk/wp-content/uploads/2018/08/illustrain04-kaigo02.png');
+}
+    }
+
+
+html,
+body {
+  height: 100%;
+}
+.h-100 {
+  height: 100%;
+}
+
+#holy {
+  display: grid;
+  /* auto: as wide as its content
+   * fr: all available space */
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header header"
+    "main side"
+    "footer side";
+}
+#header {
+  grid-area: header;
+}
+#main {
+  grid-area: main;
+  max-width: 782px;
+}
+#side {
+  grid-area: side;
+  width: 230px;
+}
+#footer {
+  grid-area: footer;
+}
+aside {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  max-height: 100vh;
+  display: block;
+  overflow-y: auto;
+}
+
+/* Menu */
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.dropdown:hover .dropdown-content {
+  visibility: visible;
+  opacity: 1;
+}
+.dropdown-content:hover {
+  visibility: visible;
+  opacity: 1;
+}
+.dropdown-content {
+  visibility: hidden;
+  opacity: 0;
+  transition: all 0.2s ease;
+  top: 55px;
+  right: 0;
+  white-space: nowrap;
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* TOC */
+#toc {
+  margin-top: 1.5rem;
+  padding: 0.7rem;
+}
+#toc * {
+  list-style: none;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+#toc ul {
+  padding-left: 0.8rem;
+}
+#toc li {
+  margin-top: 0.3rem;
+}
+
+/** 右側キャラ用スタイル */
+.right{
+  position: relative;
+  display: block;
+  margin: 24px 12px;
+  margin-left: auto;
+  margin-right: calc(50px + 15px);
+  padding: 5px 15px;
+  background-color: #fff6a8;
+  color: #333;
+  font-weight: bold;
+  text-align: right;
+  font-size: 15px;
+}
+
+.right p{
+  display: inline-block;
+  text-align: left;
+}
+  
+.right:after{
+  content: "";
+  position: absolute;
+  
+  top: 50%; left: 100%;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 30px solid #fff6a8;
+}
+
+.right:before{
+  content: "";
+  display: block;
+  position: absolute;
+  width: 50px; height: 50px;
+  top: calc(50% - 25px);
+  margin-left: calc(100% + 15px);
+
+  background-image: var(--charno4);
+  background-size: 50px;
+  background-repeat: no-repeat;
+}
+
+/** 左側キャラ用スタイル */
+.left{
+  position: relative;
+  display: block;
+  margin: 24px 12px;
+  margin-right: auto;
+  margin-left: calc(50px + 15px);
+  padding: 5px 15px;
+  width: auto; height: auto;
+  background-color: #adf;
+  color: #333;
+  font-weight: bold;
+  font-size: 15px;
+}
+  
+.left:after{
+  content: "";
+  position: absolute;
+  
+  top: 50%; right: 100%;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 30px solid #adf;
+}
+
+.left:before{
+  content: "";
+  position: absolute;
+  width: 50px; height: 50px;
+  top: calc(50% - 25px);
+  left: 0;
+  margin-left: calc(-50px + -30px);
+  
+  /* background-image: var(--charno1); */
+  background-size: 50px;
+  background-repeat: no-repeat;
+}
+
+/** PC向け */
+@media screen and (min-width: 700px){
+  .right{
+    margin-left: 160px;
+    margin-right: calc(160px);
+  }
+  .left{
+    margin-right: 160px;
+    margin-left: calc(160px);
+  }
+}
+
+@media screen and (max-width: 1012px) {
+  #holy {
+    display: block;
+  }
+  #header {
+  }
+  #main {
+    max-width: 1012px;
+  }
+  #side {
+    display: none;
+  }
+}
+
+/* --------------------------------
+ * shortcodeのデザイン
+ * -------------------------------- */
+ .buy-box {
+    display: grid;
+    grid-template-columns: 
+        1fr 1fr;
+    border: 4px solid #DCDCDC;
+    padding: 2%;
+ }
+ .item-image {
+     grid-column: 1;
+ }
+ .item-details {
+     grid-column: 2;
+     display: flex;
+     flex-direction: column;
+     padding: 2%;
+ }
+.item-details .title {
+    margin-bottom: 5%;
+}
+.buy-box .item-details .title a {
+    color: black;
+    font-weight: bold;
+}
+.buy-box .item-details .amazon-link,
+.buy-box .item-details .rakuten-link,
+.buy-box .item-details .honto-link,
+.buy-box .item-details .matsumotokiyoshi-link{
+    padding: 2%;
+    border-radius: 50px;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 1.2rem;
+    margin-bottom: 5%;
+    width: 80%;
+}
+ .buy-box .item-details .amazon-link {
+    background-color: #FF773E;
+}
+ .buy-box .item-details .rakuten-link {
+    background-color: #FF4F50;
+}
+.buy-box .item-details .honto-link {
+    background-color: #5D99FF;
+}
+.buy-box .item-details .matsumotokiyoshi-link {
+    background-color: #000000;
+}
+
+
+/* 前ページ、次ページへのリンク */
+.xPrevNextLink::after {
+  /* float による回り込みの解除 */
+  display: block;
+  content: "";
+  clear: both;
+}
+.xPrevNextLink_prev {
+  display: block;
+  float: left;
+}
+.xPrevNextLink_prev::before {
+  content: "≪";
+}
+.xPrevNextLink_next {
+  display: block;
+  float: right;
+  text-align: right;
+
+}
+.xPrevNextLink_next::after {
+  content: "≫";
+}
