@@ -4,24 +4,13 @@ author: pg1965
 type: post
 date: 2018-03-26T14:47:15+00:00
 url: /2018/03/26/amazon-mws-api-feed/
-page_layout:
-  - def
-sub:
-  - def
-side:
-  - def
-index:
-  - index
-follow:
-  - follow
-pvc_views:
-  - 2
 categories:
   - GAS
   - PHP
 
 ---
-<pre class="lang:js decode:true ">//Feed用
+```js
+//Feed用
 var namespace3 = "http://mws.amazonaws.com/doc/2009-01-01/";
 var namespace4='"http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="amzn-envelope.xsd"';
 
@@ -144,6 +133,6 @@ function putFeedSubmit() {
 
     return 0;
 }
-</pre>
+```
 
 https://okanemochi.tk/code_snipet/php/399/
