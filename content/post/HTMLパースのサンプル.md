@@ -4,7 +4,7 @@ author: pg1965
 type: post
 date: 2019-10-31T04:06:34+00:00
 categories:
-  - python
+  - PYTHON
 ---
 ```python3
 import urllib.request
