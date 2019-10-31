@@ -1,3 +1,11 @@
+---
+title: BeautifulSoupを使ったリンク抽出
+author: pg1965
+type: post
+date: 2019-10-31T04:06:34+00:00
+categories:
+  - PYTHON
+---
 ```python3
 import requests
 from bs4 import BeautifulSoup
