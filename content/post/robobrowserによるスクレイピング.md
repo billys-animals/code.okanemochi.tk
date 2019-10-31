@@ -4,7 +4,7 @@ author: pg1965
 type: post
 date: 2019-10-31T04:06:34+00:00
 categories:
-  - PHP
+  - python
 ---
 ```python3
 from robobrowser import RoboBrowser
