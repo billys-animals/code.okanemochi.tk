@@ -1,6 +1,6 @@
 ---
 title: eBAY API GetSellerList APIへの接続情報を作成する関数
-author: pg1965
+author:   スフィア
 type: post
 date: 2018-02-27T04:45:53+00:00
 url: /2018/02/27/ebay-api-getsellerlist-apiへの接続情報を作成する関数/
