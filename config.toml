@@ -3,42 +3,26 @@ title = "CODE SNIPET"
 defaultContentLanguage="ja"
 languageCode = "ja"
 hasCJKLanguage = true 
-
-
 enableRobotsTXT = true
 enableEmoji = true
-
 theme = "hugo-primer"
-
-
 preserveTaxonomyNames = true
-
-
-
 paginate = 6
 rssLimit = 20
-
-
-
 pygmentsOptions = "linenos=table"
 pygmentsCodefences = true
 pygmentsUseClasses = true
 pygmentsCodefencesGuessSyntax = true
-
 # disqusShortname = ""      # disqus_shortname
 # googleAnalytics = "UA-114508959-4"      # UA-XXXXXXXX-X
 copyright = "sphia"       # default: author.name
 disqusShortname = "ＸＸＸ"
-
-
 [author]                  # essential                     # 必需
   name = "スフィア"
-
 [sitemap]                 # essential                     # 必需
   changefreq = "weekly"
   priority = 0.5
   filename = "sitemap.xml"
-
 [[menu.main]]
   name = "記事"
   weight = 20
