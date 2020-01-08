@@ -1,6 +1,6 @@
 ---
 title: BeautifulSoupを使ったリンク抽出
-author: pg1965
+author: スフィア
 type: post
 date: 2019-10-31T04:06:34+00:00
 categories:
