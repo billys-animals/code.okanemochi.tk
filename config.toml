@@ -43,7 +43,7 @@ disqusShortname = "ＸＸＸ"
   name = "記事"
   weight = 20
   identifier = "archives"
-  url = "/post/"
+  url = "/posts/"
 [[menu.main]]
   name = "タグ"
   weight = 30
